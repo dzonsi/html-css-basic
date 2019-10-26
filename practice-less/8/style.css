@@ -1,0 +1,6 @@
+/* multi line comments can be used,
+css will display them */
+.myclass {
+  font-size: 25px;
+  color: green;
+}

@@ -1,0 +1,14 @@
+/* The @import (less) will import the file as LESS file,
+ regardless of whatever may be the file extension. */
+.style {
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+}
+.para-1 {
+  color: red;
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+}
+.para-2 {
+  color: blue;
+}

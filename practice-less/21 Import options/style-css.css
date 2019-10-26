@@ -1,0 +1,14 @@
+/* The @import (css) keyword will import the file as regular CSS,
+ regardless of file extension. */
+/*
+
+ @import (css) "css.txt";
+
+.para-1 {
+	color: green;
+	.mycss;
+}
+.para-2 {
+	color: blue;
+}
+nece da radi */

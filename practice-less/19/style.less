@@ -1,0 +1,31 @@
+.mixin() {
+	@bgcolor: #C0C0C0;
+}
+
+.myclass {
+	.mixin();
+	background-color: @bgcolor;
+}
+/* Mixins are similar to functions and the variables that are
+  defined in a mixin will behave as its return values. */
+
+.padding(@x, @y) {
+	@padding: ((@x + @y) / 2);
+}
+
+.myclass2 {
+	.padding(80px, 120px);
+	padding-left: @padding;
+}
+/* Whenever a mixin is defined inside another mixin,
+ it can be used as return value too. */
+
+.outerMixin(@value) {
+	.nestedMixin() {
+		font-size: @value;
+	}
+}
+.myclass3 {
+	.outerMixin(30px);
+	.nestedMixin();
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Grid2!</title>
+
+	<style>
+		* { box-sizing: border-box;
+			margin: 0;
+		}
+		.grid-container { display: grid;
+						  grid-template-columns: auto auto auto;
+						  grid-template-rows: 50% 50%;
+						  grid-gap: 10px;
+						  padding: 10px;
+						  border: 1px solid black;
+		}
+		.image-1 { width: 100%;
+				   height: 100%;
+				   border-radius: 10px;
+				   box-shadow: 1px 1px 2px black, 3px 3px 6px rgba(150, 150, 150, 0.7);
+		}
+		@media (max-width: 1300px) { .grid-container { grid-template-columns: auto 50% auto;
+						  							   grid-template-rows: 50% 50%;
+						  		   }
+						  		   .fit { object-fit: cover;
+						  		   }
+		}
+		@media (max-width: 600px) { .grid-container { grid-template-columns: auto auto;
+						  							   grid-template-rows: 33.33% 33.33% 33.33%;
+						  		   }
+		}
+		.grid-container-2 { display: grid;
+						    grid-template-columns: 400px 400px 400px;
+						    grid-template-rows: 270px 270px 270px;
+						    grid-gap: 10px;
+						    padding: 10px;
+						    border: 1px solid black;
+						    background-image: linear-gradient(white, rgb(150, 150, 150));
+		}
+		@media (min-width: 1300px) { .grid-container-2 { justify-content: space-evenly;
+									}
+		}
+		@media (max-width: 1300px) { .grid-container-2 { grid-template-columns: auto auto auto;
+						           	}
+									.grid-row-1 { grid-row: 1 / 3;
+								   }
+									.grid-row-2 { grid-area: 1 / 2 / 3 / 3;
+								   }
+									.grid-row-3 { grid-area: 1 / 3 / 3 / 4;
+								   }
+		}
+		@media (max-width: 600px) { .grid-container-2 { grid-template-columns: auto auto auto;
+														grid-template-rows: auto auto auto;
+						  		   }
+		}
+		.grid-container-3 { display: grid;
+						    grid-template-columns: auto auto auto auto;
+						    grid-template-rows: auto auto auto auto;
+						    grid-gap: 10px;
+						    padding: 10px;
+						    border: 1px solid black;
+						    background-image: linear-gradient(white, rgb(150, 150, 150));
+		}
+		.display-1 { display: none;
+		}
+		@media (max-width: 1300px) { .grid-row-4 { grid-area: 2 / 2 / 4 / 4;
+									}
+								     .display-1 { display: block;
+								    }
+		}
+		@media (max-width: 1300px) { .display-2 { display: none;
+									}
+									.grid-row-5 { grid-area: 2 / 1 / 4 / 2;
+									}
+									.grid-row-6 { grid-area: 2 / 4 / 4 / 5;
+									}
+		}
+		.grid-container-4 { display: grid;
+						    grid-template-areas: 'su35-1 su35-2 su35-3'
+						    					 'pitch-1 pitch-2 pitch-3'
+						    					 'gsmarena-1 gsmarena-2 gsmarena-3';
+						    grid-gap: 10px;
+						    padding: 10px;
+						    border: 1px solid black;
+						    background-image: linear-gradient(white, rgb(150, 150, 150));
+		}
+		.grid-row-7 { grid-area: su35-1;
+		}
+		.grid-row-8 { grid-area: su35-2;
+		}
+		.grid-row-9 { grid-area: su35-3;
+		}
+		.grid-row-10 { grid-area: pitch-1;
+		}
+		.grid-row-11 { grid-area: pitch-2;
+		}
+		.grid-row-12 { grid-area: pitch-3;
+		}
+		.grid-row-13 { grid-area: gsmarena-1;
+		}
+		.grid-row-14 { grid-area: gsmarena-2;
+		}
+		.grid-row-15 { grid-area: gsmarena-3;
+		}
+		@media (max-width: 1300px) { .grid-container-4 {grid-template-areas: 'su35-1 pitch-1 gsmarena-1'
+						    					 							 'su35-2 pitch-2 gsmarena-2'
+						    					 							 'su35-3 pitch-3 gsmarena-3';
+						    		}
+		}
+
+
+	</style>
+
+</head>
+
+<body>
+	<div class="grid-container">
+		<div><img class="image-1 fit" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1 fit" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1 fit" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1 fit" src="gsmarena.jpg" alt="gsmarena"></div>
+	</div>
+	<div class="grid-container-2">
+		<div class="grid-row-1"><img class="image-1 fit" src="mig29.jpg" alt="mig29"></div>
+		<div class="grid-row-2"><img class="image-1 fit" src="su35.jpg" alt="su35"></div>
+		<div class="grid-row-3"><img class="image-1 fit" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+	</div>
+	<div class="grid-container-3">
+		<div><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div class="grid-row-4"><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div class="display-1"><img class="image-1" src="su35.jpg" alt="su35"></div>
+	</div>
+	<div class="grid-container-3">
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div class="display-2"><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div class="grid-row-4"><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div class="display-2"><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div class="display-2"><img class="image-1" src="mig29.jpg" alt="mig29"></div>
+		<div class="grid-row-5"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div class="grid-row-6"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div class="display-2"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div class="display-2"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+	</div>
+	<div class="grid-container-4">
+		<div class="grid-row-7"><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div class="grid-row-8"><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div class="grid-row-9"><img class="image-1" src="su35.jpg" alt="su35"></div>
+		<div class="grid-row-10"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div class="grid-row-11"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div class="grid-row-12"><img class="image-1" src="pitch.jpg" alt="pitch"></div>
+		<div class="grid-row-13"><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div class="grid-row-14"><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+		<div class="grid-row-15"><img class="image-1" src="gsmarena.jpg" alt="gsmarena"></div>
+	</div>
+
+</body>
+
+</html>

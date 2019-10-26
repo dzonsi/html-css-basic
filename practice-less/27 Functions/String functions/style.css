@@ -1,0 +1,23 @@
+/* Escape encodes a string or information by using URL encoding on special characters. */
+.first {
+  Hello!!%20welcome%20to%20Tutorialspoint!
+}
+/* e It is a string function which uses string as parameter and returns the 
+information without quotes. It is a CSS escaping which uses ~"some content"
+ escaped values and numbers as parameters. */
+.second {
+  filter: Hello!! welcome to Tutorialspoint!;
+}
+/* % format This function formats a string. It can be written with the
+ following format − %(string, arguments ...) */
+.third {
+  format-a-d: "myvalues: 5 myfile: "mydir/less_demo.less"";
+}
+/* replace It is used to replace the text within a string.
+string − It searches the string and replace in.
+pattern − It searches the regular expression pattern.
+replacement − It replaces the string that matches the pattern.
+flags − These are optional regular expression flags. */
+.fourth {
+  text: "Welcome, to Tutorialspoint!";
+}

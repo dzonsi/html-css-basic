@@ -1,0 +1,11 @@
+/* You can use the and keyword to work around logical operators with guards.
+ You can combine the guard conditions using the and keyword and negate the
+  conditions using the not keyword. */
+.class1 {
+  font-size: 20px;
+  color: #FF0000;
+}
+.class2 {
+  font-size: 20px;
+  color: #555;
+}

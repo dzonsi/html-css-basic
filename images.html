@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Images</title>
+
+	<style>
+		.div1 img { width: 450px;
+					height: 300px;
+					margin: 5px;
+					border-radius: 10px;
+		}
+		.blur { filter: blur(3px);
+		}
+		.brightness { filter: brightness(150%);
+		}
+		.contras { filter: contrast(250%);
+		}
+		.grayscale { filter: grayscale(70%);
+		}
+		.huerotate{ filter: hue-rotate(180deg);
+		}
+		.invert { filter: invert(100%);
+		}
+		.opacity { filter: opacity(50%);
+		}
+		.saturate { filter: saturate(5);
+		}
+		.sepia { filter: sepia(100%);
+		}
+		.shadow { filter: drop-shadow(4px 4px 10px black);
+		}
+		.container1 { position: relative;
+					  width: 33%;
+		}
+		.image1 { display: block;
+				  width: 100%;
+				  height: auto;
+		}
+		.overlay1 { position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 100%;
+					width: 100%;
+					opacity: 0;
+					transition: opacity .5s ease;
+					background-color: #008CBA;
+		}
+		.container1:hover .overlay1 { opacity: 1;
+		}
+		.text1 { color: white;
+				 font-size: 30px;
+				 position: absolute;
+				 top: 50%;
+				 left: 50%;
+				 transform: translate(-50%, -50%);
+		}
+		.container2 { position: relative;
+					  width: 33%;
+		}
+		.image2 { display: block;
+				  width: 100%;
+				  height: auto;
+				  opacity: 1;
+				  transition: opacity .5s ease;
+		}
+		.container2:hover .image2 { opacity: 0.4;
+		}
+		.overlay2 { position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					opacity: 0;
+					transition: opacity .5s ease;
+		}
+		.text2 { background-color: #4CAF50;
+				 color: white;
+				 font-size: 30px;
+				 padding: 15px 25px;
+		}
+		.container2:hover .overlay2 { opacity: 1;
+		}
+		.container3 { position: relative;
+					  width: 33%;
+		}
+		.image3 { display: block;
+				  width: 100%;
+				  height: auto;
+		}
+		.overlay3 { position: absolute;
+					right: 0;
+					bottom: 100%;
+					left: 0;
+					height: 0;
+					width: 100%;
+					transition: bottom .5s ease, height .5s ease;
+					background-color: #008CBA;
+					overflow: hidden;
+		}
+		.container3:hover .overlay3 { bottom: 0;
+									  height: 100%;
+		}
+		.text3 { color: white;
+				 font-size: 30px;
+				 position: absolute;
+				 top: 50%;
+				 left: 50%;
+				 transform: translate(-50%, -50%);
+				 overflow: hidden;
+		}
+		.container4 { position: relative;
+					  width: 33%;
+		}
+		.image4 { display: block;
+				  width: 100%;
+				  height: auto;
+		}
+		.overlay4 { position: absolute;
+					right: 0;
+					top: 100%;
+					left: 0;
+					height: 0;
+					width: 100%;
+					transition: top .5s ease, height .5s ease;
+					background-color: #008CBA;
+					overflow: hidden;
+		}
+		.container4:hover .overlay4 { top: 0;
+									  height: 100%;
+		}
+		.text4 { color: white;
+				 font-size: 30px;
+				 position: absolute;
+				 top: 50%;
+				 left: 50%;
+				 transform: translate(-50%, -50%);
+				 overflow: hidden;
+		}
+		.container5 { position: relative;
+					  width: 33%;
+		}
+		.image5 { display: block;
+				  width: 100%;
+				  height: auto;
+		}
+		.overlay5 { position: absolute;
+					right: 100%;
+					top: 0;
+					bottom: 0;
+					height: 100%;
+					width: 0;
+					transition: right .5s ease, width .5s ease;
+					background-color: #008CBA;
+					overflow: hidden;
+		}
+		.container5:hover .overlay5 { right: 0;
+									  width: 100%;
+		}
+		.text5 { color: white;
+				 font-size: 30px;
+				 position: absolute;
+				 top: 50%;
+				 left: 50%;
+				 transform: translate(-50%, -50%);
+				 overflow: hidden;
+				 white-space: nowrap;
+		}
+		.container6 { position: relative;
+					  width: 33%;
+		}
+		.image6 { display: block;
+				  width: 100%;
+				  height: auto;
+		}
+		.overlay6 { position: absolute;
+					left: 100%;
+					top: 0;
+					bottom: 0;
+					height: 100%;
+					width: 0;
+					transition: left .5s ease, width .5s ease;
+					background-color: #008CBA;
+					overflow: hidden;
+		}
+		.container6:hover .overlay6 { left: 0;
+									  width: 100%;
+		}
+		.text6 { color: white;
+				 font-size: 30px;
+				 position: absolute;
+				 top: 50%;
+				 left: 50%;
+				 transform: translate(-50%, -50%);
+				 overflow: hidden;
+				 white-space: nowrap;
+		}
+		.container8 { position: relative;
+					  width: 33%;
+		}
+		.image8 { display: block;
+				  width: 100%;
+				  height: auto;
+				  opacity: 0.3;
+				  transition: opacity .5s;
+		}
+		.overlay8 { position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					height: 100%;
+					width: 100%;
+					transition: height .5s ease;
+					background-color: white;
+					overflow: hidden;
+					opacity: 0.7;
+		}
+		.container8:hover .overlay8 { height: 0;
+		}
+		.container8:hover .image8 { opacity: 1;
+		}
+		.text8 { font-size: 30px;
+				 position: absolute;
+				 top: 50%;
+				 left: 50%;
+				 transform: translate(-50%, -50%);
+				 overflow: hidden;
+				 white-space: nowrap;
+		}
+		.container7 { float: left;
+					  margin: 10px;
+		}
+		.container7 img { border-radius: 7px;
+		}
+		.fill { object-fit: fill;
+		}
+		.contain { object-fit: contain;
+		}
+		.cover { object-fit: cover;
+		}
+		.scale-down { object-fit: scale-down;
+		}
+		.none { object-fit: none;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<div class="div1">
+		<img src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="blur" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="brightness" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="contras" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="grayscale" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="huerotate" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="invert" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="opacity" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="saturate" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="sepia" src="su35.jpg" alt="su35" width="300" height="200">
+		<img class="shadow" src="su35.jpg" alt="su35" width="300" height="200">
+	</div>
+	<h1>Fade in text:</h1>
+	<div class="container1">
+		<img src="su35600.jpg" alt="su35" class="image1">
+		<div class="overlay1">
+			<div class="text1">Hello World!</div>
+		</div>
+	</div>
+	<h1>Fade in box:</h1>
+	<div class="container2">
+		<img src="su35600.jpg" alt="su35" class="image2">
+		<div class="overlay2">
+			<div class="text2">Hello World!</div>
+		</div>
+	</div>
+	<h1>Slade from top:</h1>
+	<div class="container3">
+		<img src="su35600.jpg" alt="su35" class="image3">
+		<div class="overlay3">
+			<div class="text3">Hello World!</div>
+		</div>
+	</div>
+	<h1>Slade from bottom:</h1>
+	<div class="container4">
+		<img src="su35600.jpg" alt="su35" class="image4">
+		<div class="overlay4">
+			<div class="text4">Hello World!</div>
+		</div>
+	</div>
+	<h1>Slade from left:</h1>
+	<div class="container5">
+		<img src="su35600.jpg" alt="su35" class="image5">
+		<div class="overlay5">
+			<div class="text5">Hello World!</div>
+		</div>
+	</div>
+	<h1>Slade from right:</h1>
+	<div class="container6">
+		<img src="su35600.jpg" alt="su35" class="image6">
+		<div class="overlay6">
+			<div class="text6">Hello World!</div>
+		</div>
+	</div>
+	<h1>Slade:</h1>
+	<div class="container8">
+		<img src="su35600.jpg" alt="su35" class="image8">
+		<div class="overlay8">
+			<div class="text8">Hello World!</div>
+		</div>
+	</div>
+	<div class="container7"><img src="su35600.jpg" alt="su35" class="" width="250" height="600"></div>
+	<div class="container7"><img src="su35600.jpg" alt="su35" class="fill" width="250" height="600"></div>
+	<div class="container7"><img src="su35600.jpg" alt="su35" class="contain" width="250" height="600"></div>
+	<div class="container7"><img src="su35600.jpg" alt="su35" class="cover" width="250" height="600"></div>
+	<div class="container7"><img src="su35600.jpg" alt="su35" class="scale-down" width="250" height="600"></div>
+	<div class="container7"><img src="su35600.jpg" alt="su35" class="none" width="250" height="600"></div>
+	
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+/* isnumber takes a value as parametar and returns true if it's a number
+or false otherwise. */
+.math1 {
+	font-size: isnumber(1234);
+	color: isnumber(24px);
+	top: isnumber(red);
+}
+/* isstring takes a value as parameter and returns true, if it's a string or
+false otherwise. */
+.math2 {
+	font-size: isstring("variable");
+	color: isstring(25px);
+}
+/* iscolor takes a vlaue as parameter and returns true, if value is a color or
+false if it's not. */
+.math3 {
+	font-size: iscolor(#fff);
+	color: iscolor(red);
+	padding: iscolor(24px);
+}
+/* iskeyword takes a value as parameter and returns true if value is a keyword
+or false if it's not */
+.math4 {
+	font-size: iskeyword(keyword);
+	color: iskeyword(8.6%);
+}
+/* isurl takes a value as parameter and returns true if value is a url
+or false if it's not. */
+.math5 {
+	font-size: isurl(url(https://www.acmilan.com/en));
+	color: isurl(dodgerblue);
+}
+/* ispixel takes a value as parameter and returns true if value is a number
+in pixels or false otherwise. */
+.math6 {
+	font-size: ispixel(24px);
+	color: ispixel(navy);
+}
+/* isem takes a value as parameter and returns true, if value is an em
+ value or false if it's not. */
+ .math7 {
+ 	font-size: isem(2em);
+ 	color: isem(25%);
+ }
+/* ispercentage takes a value as parameter and returns true, if value
+ is in percentage or returns false, if value is not in percentage. */
+ .math8 {
+ 	font-size: ispercentage(50%);
+ 	color: ispercentage(#f1f1f1);
+ }
+ /* isunit returns true if a value is a number in specified units provided
+  as parameter or it will return false if value is not a number in specified units.*/
+  .math9 {
+  	font-size: isunit(10em, em);
+  	color: isunit(50%, "%");
+  	padding: isunit(10px, em);
+  }
+  /* isruleset takes a value as parameter and returns true, if value is a ruleset
+   or false otherwise. */
+   @rules: {
+   	color-interpolation: linen;
+   }
+   .math10 {
+   	font-size: isruleset(@rules);
+   	color: isruleset(24px);
+   }

@@ -1,0 +1,104 @@
+/* Variables */
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+.test1 {
+  color: #333;
+}
+
+/* Nesting */
+.test2 ul {
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+.test2 li {
+  display: inline-block;
+}
+.test2 a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+/* Import */
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mixins */
+.test3 {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.test4, .test7 {
+  color: red;
+  background-color: green;
+}
+
+.test5 {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  color: dodgerblue;
+  background-color: linen;
+}
+
+/* Extend */
+.warning, .error, .success, .message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.test8 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.success {
+  border-color: navy;
+}
+
+.error {
+  border-color: mediumseagreen;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+/* Operators */
+.container {
+  width: 100%;
+}
+
+article[role=main] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role=complementary] {
+  float: right;
+  width: 31.25%;
+}
+
+.test9 {
+  margin-left: 20px;
+  padding: 30px;
+  width: 90%;
+}
+
+.test10:hover {
+  color: red;
+}
+
+/*# sourceMappingURL=practice.css.map */

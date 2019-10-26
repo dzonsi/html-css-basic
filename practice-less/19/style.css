@@ -1,0 +1,13 @@
+.myclass {
+  background-color: #C0C0C0;
+}
+/* Mixins are similar to functions and the variables that are
+  defined in a mixin will behave as its return values. */
+.myclass2 {
+  padding-left: 100px;
+}
+/* Whenever a mixin is defined inside another mixin,
+ it can be used as return value too. */
+.myclass3 {
+  font-size: 30px;
+}

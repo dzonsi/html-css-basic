@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Text and Box shadows</title>
+
+	<style>
+		#s1 { color: white;
+			  text-shadow: 1px 1px black;
+		}
+		#s2 { color: white;
+			  text-shadow: 1px 1px 5px black;
+		}
+		#s3 { text-shadow: 0px 0px 7px red;
+		}
+		#s4 { text-shadow: -1px 0px green, 1px 0px green, 0px -1px green, 0px 1px green;
+			  color: yellow;
+		}
+		#s5 { text-shadow: 0px 0px 5px red, 0px 0px 20px yellow, 0px 0px 35px black;
+		}
+		#s6 {width: 300px;
+			 height: 200px;
+			 background-color: yellow;
+			 box-shadow: 15px 15px black;
+			 display: inline-block;
+			 margin: 20px;
+		}
+		#s7 {display: inline-block;
+			 width: 300px;
+			 height: 200px;
+			 background-color: yellow;
+			 box-shadow: 15px 15px 15px black;
+			 margin: 20px;
+		}
+		#s8 {display: inline-block;
+			 width: 300px;
+			 height: 200px;
+			 background-color: yellow;
+			 box-shadow: 0 15px 25px black;
+			 margin: 20px;
+		}
+		#s9 {display: inline-block;
+			 width: 300px;
+			 height: 200px;
+			 background-color: yellow;
+			 box-shadow: 0 15px black, 0 -15px red, 15px 0 green, -15px 0 blue;
+			 margin: 20px;
+		}
+		#s10 {display: inline-block;
+			 width: 300px;
+			 height: 200px;
+			 background-color: yellow;
+			 box-shadow: 0 15px 25px black, 0 -15px 25px red, 15px 0 25px green, -15px 0 25px blue;
+			 margin: 20px;
+		}
+		#s11 {display: inline-block;
+			 width: 300px;
+			 height: 300px;
+			 box-shadow:0 0 10px black;
+			 margin: 20px;
+			 border-radius: 5px;
+		}
+		#s11 img {border-radius: 5px 5px 0 0;
+		}
+		.d1 {text-align: center;
+			 padding: 10px;
+		}
+		#s12 {display: inline-block;
+			 width: 300px;
+			 height: 300px;
+			 box-shadow:0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
+			 margin: 20px;
+			 border-radius: 5px;
+		}
+		#s12 img {border-radius: 5px 5px 0 0;
+		}
+		#s12:hover {box-shadow: 0 4px 8px black, 0 6px 20px black;
+					cursor: pointer;
+		}
+		.d2 {text-align: center;
+			 padding: 10px;
+		}
+		#s13 { display: inline-block;
+			   margin: 20px;
+			   width: 400px;
+			   height: 300px;
+			   border: 1px solid black;
+			   border-radius: 5px;
+			   position: relative;
+			   padding: 10px;
+			   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+			   background-color: white;
+		}
+		#s13 img { width: 100%;
+				   box-sizing: border-box;
+				   height: 100%;
+				   border: 1px inset black;
+
+		}
+		#s13::after { position: absolute;
+					  left: 20%;
+					  bottom: 0;
+					  z-index: -1;
+					  width: 60%;
+					  height: 100px;
+					  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+					  content: "";
+		}
+		.tr { border: 1px solid black;
+			  background-color: mediumseagreen;
+			  color: white;
+			  width: 250px;
+			  height: 100px;
+			  text-align: center;
+			  font-size: 40px;
+			  border-radius: 7px;
+			  margin: 5px;
+		}
+		#s15 {transform: translate(50px, -50px);
+		}
+		#s16 {transform: rotate(30deg);
+		}
+		#s17 {transform: rotate(-40deg);
+		}
+		#s18 {transform: scale(1.5, 0.75);
+		}
+		#s19 {transform: skewX(15deg);
+		}
+		#s20 {transform: skewX(-35deg);
+		}
+		#s21 {transform: skewY(-25deg);
+		}
+		#s22 {transform: skewY(25deg);
+		}
+		#s23 {transform: skew(25deg, 30deg);
+		}
+		#s24 {transform: matrix(1.5, 0.2, 0.6, 2, 100, 0);
+		}
+		#s25 {transform: matrix(0.5, -0.2, 0.6, 0.5, 100, -70);
+		}
+		#s26 {transform: rotateX(60deg);
+		}
+		#s27 {transform: rotateY(70deg);
+		}
+		#s28 {transform: rotateZ(20deg);
+		}
+		#s29 {transform: rotate3d(1, 2, 1, -60deg);
+		}
+		#s30 {transform: scale3d(1, 2, 1.5);
+		}
+		#s31 {transform: translate(350px, -50px) scale(1.5, 2);
+		}
+		.s32 {display: inline-block;
+			 width: 300px;
+			 height: 300px;
+			 box-shadow:0 0 10px black;
+			 margin: 20px;
+			 border-radius: 5px;
+			 background-color: white;
+		}
+		.s33 { transform: rotate(7deg);
+		}
+		.s34 { transform: rotate(-17deg);
+		}
+		.s35 { transform: rotate(27deg);
+		}
+		.s36 { display: inline-block;
+			 width: 300px;
+			 height: 300px;
+			 box-shadow:0 0 10px black;
+			 margin: 20px;
+			 border-radius: 5px;
+			 background-color: white;
+		}
+		.s37 {display: inline-block;
+			 width: 300px;
+			 height: 300px;
+			 box-shadow:0 0 10px black;
+			 margin: 20px;
+			 border-radius: 5px;
+			 background-color: white;
+		}
+		.s38 { transform: rotate(14deg) translate(70px, -50px);
+		}
+		.s39 { transform: rotate(9deg) translate(100px, -120px);
+		}
+		.hr1 {width: 70%;
+			  height: 5px;
+			  background-color: yellow;
+			  border: 1px solid grey;
+		}
+		.side {width: 150px;
+			   height: 150px;
+			   background-color: rgba(150, 150,150, 0.7);
+			   color: linen;
+			   border: 1px solid red;
+			   text-align: center;
+			   font-size: 70px;
+			   line-height: 150px;
+
+		}
+		.cube{ position: relative;
+			   transform-style: preserve-3d;
+			   transform: rotateX(15deg) rotateY(30deg);
+		}
+		.side1 {position: absolute;
+				top: 200px;
+				left: 65%;
+		}
+		.front {transform: translateZ(75px);
+		}
+		.top { transform: rotateX(90deg) translateZ(75px);
+		}
+		.back {transform: rotateX(180deg) translateZ(75px);
+		}
+		.bottom {transform: rotateX(-90deg) translateZ(75px);
+		}
+		.left {transform: rotateY(-90deg) translateZ(75px);
+		}
+		.right {transform: rotateY(90deg) translateZ(75px);
+		}
+		.side2 {position: absolute;
+				top: 200px;
+				left: 35%;
+		}
+		.per1 { perspective: 450px;
+		}
+		.per2 { perspective: 850px;
+		}
+		.side3 {position: absolute;
+				top: 200px;
+				left: 15%;
+		}
+		.side4 {position: absolute;
+				top: 600px;
+				left: 20%;
+		}
+		.cube2 { position: relative;
+			   transform-style: preserve-3d;
+			   transform: rotateX(20deg) rotateY(20deg);
+		}
+		.front2{transform: translateZ(53px);
+		}
+		.kosina1{ transform: translateY(-128px) rotateX(45deg);
+		}
+		.top2{ transform: translateZ(-128px) translateY(-181px) rotateX(90deg);
+		}
+		.kosina2 { transform: translateY(-128px) translateZ(-256px) rotateX(-45deg);
+		}
+		.back2{ transform: translateZ(-309px);
+		}
+		.kosina3{ transform: translateY(128px ) translateZ(-256px) rotateX(45deg);
+		}
+		.bottom2 { transform: translateZ(-128px) translateY(181px) rotateX(90deg);
+		}
+		.kosina4 { transform: translateY(128px) rotateX(-45deg);
+		}
+		.okvir { border: 2px solid black;
+			     border-radius: 5px;
+				 width: 100%;
+				 height: 900px;
+		}
+		.tra1 { background-color: mediumseagreen;
+				width: 150px;
+				padding: 10px;
+				text-align: center;
+				border-radius: 5px;
+				transition: width 3s, box-shadow 3s;
+		}
+		.tra1:hover { width: 500px;
+					  box-shadow: 5px 5px 10px black;
+		}
+		.span1 {display: none;
+		}
+		.tra1:hover .span1 { display: inline;
+		}
+		.tra2 { background-color: mediumseagreen;
+				color: white;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin: 20px;
+				border-radius: 5px;
+				transition: width 3s, height 3s;
+		}
+		.tra2:hover { width: 300px;
+					  height: 300px;
+		}
+		.tra3 { background-color: mediumseagreen;
+				color: white;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin: 20px;
+				border-radius: 5px;
+				transition: width 3s, height 3s 3s;
+		}
+		.tra3:hover { width: 300px;
+					  height: 300px;
+		}
+		.tra4 { background-color: mediumseagreen;
+				color: white;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin: 20px;
+				border-radius: 5px;
+				transition: width 3s, height  3s, transform 3s, background-color 3s;
+		}
+		.tra4:hover { width: 300px;
+					  height: 300px;
+					  transform: rotate(180deg);
+					  background-color: red;
+		}
+		.tra5 { background-color: mediumseagreen;
+				color: white;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin: 20px;
+				border-radius: 5px;
+				transition: width 3s 3s, height  3s 3s, transform 3s 6s, background-color 3s;
+		}
+		.tra5:hover { width: 300px;
+					  height: 300px;
+					  transform: rotate(180deg);
+					  background-color: red;
+		}
+		.tra6 { background-color: mediumseagreen;
+				color: white;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin: 20px;
+				border-radius: 5px;
+				transition: width 3s 3s, height  3s 3s, transform 3s 6s, background-color 3s;
+		}
+		.tra6:hover { width: 300px;
+					  height: 300px;
+					  transform: translate(100px, 0px) skewX(30deg);
+					  background-color: red;
+		}
+		.tra7 { background-color: mediumseagreen;
+				color: white;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin: 20px;
+				border-radius: 5px;
+				transition: width 3s 3s, height  3s 3s, transform 3s 6s, background-color 3s;
+		}
+		.tra7:hover { width: 300px;
+					  height: 300px;
+					  transform: skewX(30deg) rotateX(20deg) rotateY(20deg);
+					  background-color: darkblue;
+		}
+		.tra8 img { opacity: 0.2;
+			    	transition: opacity 4s, border-radius 4s;
+			    	border-radius: 2px;
+		}
+		.tra8:hover img { opacity: 1;
+					  	  border-radius: 10px;
+		}
+		.side5 {position: absolute;
+				top: 200px;
+				left: 20%;
+		}
+		.sklapanje {width: 100%;
+					height: 600px;
+					border: 5px solid black;
+					border-radius: 5px;
+		}
+		.front3 { transition: transform 2s;
+		}
+		.sklapanje:hover .front3 { transform: translateZ(53px);
+		}
+		.kosina5 { transition: transform 2s;
+		}
+		.sklapanje:hover .kosina5 { transform: translateY(-128px) rotateX(45deg);
+		}
+		.top3 { transition: transform 2s;
+		}
+		.sklapanje:hover .top3 { transform: translateZ(-128px) translateY(-181px) rotateX(90deg);
+		}
+		.kosina6 { transition: transform 2s;
+		}
+		.sklapanje:hover .kosina6 { transform: translateY(-128px) translateZ(-256px) rotateX(-45deg);
+		}
+		.back3 { transition: transform 2s;
+		}
+		.sklapanje:hover .back3 { transform: translateZ(-309px);
+		}
+		.kosina7 { transition: transform 2s;
+		}
+		.sklapanje:hover .kosina7 { transform: translateY(128px ) translateZ(-256px) rotateX(45deg);
+		}
+		.bottom3 { transition: transform 2s;
+		}
+		.sklapanje:hover .bottom3 { transform: translateZ(-128px) translateY(181px) rotateX(90deg);
+		}
+		.kosina8 { transition: transform 2s;
+		}
+		.sklapanje:hover .kosina8 { transform: translateY(128px) rotateX(-45deg);
+		}
+		.sklapanje2 {width: 100%;
+					height: 600px;
+					border: 5px solid black;
+					border-radius: 5px;
+		}
+		.front4 { transition: transform 2s;
+		}
+		.sklapanje2:hover .front4 { transform: translateZ(53px);
+		}
+		.kosina9 { transition: transform 2s 2s;
+		}
+		.sklapanje2:hover .kosina9 { transform: translateY(-128px) rotateX(45deg);
+		}
+		.top4 { transition: transform 2s 4s;
+		}
+		.sklapanje2:hover .top4 { transform: translateZ(-128px) translateY(-181px) rotateX(90deg);
+		}
+		.kosina10 { transition: transform 2s 6s;
+		}
+		.sklapanje2:hover .kosina10 { transform: translateY(-128px) translateZ(-256px) rotateX(-45deg);
+		}
+		.back4 { transition: transform 2s 8s;
+		}
+		.sklapanje2:hover .back4 { transform: translateZ(-309px);
+		}
+		.kosina11 { transition: transform 2s 10s;
+		}
+		.sklapanje2:hover .kosina11 { transform: translateY(128px ) translateZ(-256px) rotateX(45deg);
+		}
+		.bottom4 { transition: transform 2s 12s;
+		}
+		.sklapanje2:hover .bottom4 { transform: translateZ(-128px) translateY(181px) rotateX(90deg);
+		}
+		.kosina12 { transition: transform 2s 14s;
+		}
+		.sklapanje2:hover .kosina12 { transform: translateY(128px) rotateX(-45deg);
+		}
+		.ul1 { list-style-type: none;
+			   margin: 0;
+			   padding: 0;
+			   overflow: hidden;
+			   background-color: grey;
+			   border-radius: 5px;
+		}
+		.ul1 li { float: left;
+		}
+		.ul1 a { display: block;
+				 text-decoration: none;
+				 padding: 15px;
+				 color: white;
+				 text-align: center;
+				 font-size: 25px;
+				 transition: background-color 1s, color 1s;
+				 
+		}
+		.ul1 a:hover { background-color: white;
+					   color: black;
+		}
+		.ani1 { width: 100px;
+				height: 100px;
+				color: white;
+				background-color: green;
+				animation-name: animacija1;
+				animation-duration: 10s;
+				animation-timing-function: linear;
+		}
+		@keyframes animacija1 { 0% { background-color: green;}
+								20% { background-color: red; width: 200px; height: 200px; }
+								40% { background-color: darkblue; transform: skewX(20deg); }
+								60% { transform: rotateX(30deg); }
+								80% { background-color: grey; }
+								100% { background-color: black; }
+		}
+		.ani2 { animation-name: animacija2;
+				animation-duration: 10s;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
+		}
+		@keyframes animacija2 { 0% { width: 100px; height: 50px; color: white; background: gray; border: 3px solid green; }
+								50% { width: 100px; height: 50px; color: black; background: gray; border: 3px solid green; transform: rotate(30deg); }
+								100% { width: 100px; height: 50px; color: black; background: gray; border: 3px solid green; }
+		}
+		.ani3 img { opacity: 0.1;
+				position: relative;
+				animation-name: animacija3;
+				animation-duration: 20s;
+				animation-timing-function: linear;
+				animation-fill-mode: both;
+		}
+		@keyframes animacija3 { 0% { left: 0; top: 0; }
+							   25% { left: 45%; top: 0; }
+							   50% { left: 45%; top:100px; }
+							   75% { width: 600px; height: 400px; }
+							   100% { opacity: 1; border-radius: 15px; }
+		}
+
+
+
+	</style>
+
+
+</head>
+
+<body>
+	<h1 id="s1">Text shadow efect!!!</h1>
+	<h1 id="s2">Text shadow efect!!!</h1>
+	<h1 id="s3">Text shadow efect!!!</h1>
+	<h1 id="s4">Text shadow efect!!!</h1>
+	<h1 id="s5">Text shadow efect!!!</h1>
+	<div id="s6"></div>
+	<div id="s7"></div>
+	<div id="s8"></div>
+	<div id="s9"></div>
+	<div id="s10"></div>
+	<div id="s11"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d1"><b>MiG 29</b></div></div>
+	<div id="s12"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d2"><b>MiG 29</b></div></div>
+	<div id="s13"><img src="mig29.jpg" alt="MiG29" width="300" height="250"></div>
+	<div id="s14" class="tr">2D Transform</div>
+	<div id="s15" class="tr">2D Transform</div>
+	<div id="s16" class="tr">2D Transform</div>
+	<div id="s17" class="tr">2D Transform</div>
+	<div id="s18" class="tr">2D Transform</div>
+	<div id="s19" class="tr">2D Transform</div>
+	<div id="s20" class="tr">2D Transform</div>
+	<div id="s21" class="tr">2D Transform</div>
+	<div id="s22" class="tr">2D Transform</div>
+	<div id="s23" class="tr">2D Transform</div>
+	<div id="s24" class="tr">2D Transform</div>
+	<div id="s25" class="tr">2D Transform</div>
+	<div id="s26" class="tr">3D Transform</div>
+	<div id="s27" class="tr">3D Transform</div>
+	<div id="s28" class="tr">3D Transform</div>
+	<div id="s29" class="tr">3D Transform</div>
+	<div id="s30" class="tr">3D Transform</div>
+	<div id="s31" class="tr">2D Transform:tr+sc</div>
+	<div id="s32" class="tr">3D Transform</div>
+	<div id="s33" class="tr">3D Transform</div>
+	<div id="s34" class="tr">3D Transform</div>
+	<div id="s35" class="tr">3D Transform</div>
+	<div id="s36" class="tr">3D Transform</div>
+	<div id="s37" class="tr">3D Transform</div>
+	<hr class="hr1">
+	<div>
+		<div class="s32 s33"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d1"><b>MiG 29</b></div></div>
+		<div class="s32 s34"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d1"><b>MiG 29</b></div></div>
+		<div class="s32 s35"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d1"><b>MiG 29</b></div></div>
+		<div>
+			<div class="s36 s38"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d1"><b>MiG 29</b></div></div>
+			<div class="s37 s39"><img src="mig29.jpg" alt="MiG29" width="300" height="250"><div class="d1"><b>MiG 29</b></div></div>
+		</div>
+	</div>
+	<hr class="hr1">
+	<div> 
+		<div class="cube">
+			<div class="side side3 front">1</div>
+			<div class="side side3 top">2</div>
+			<div class="side side3 back">3</div>
+			<div class="side side3 bottom">4</div>
+			<div class="side side3 left">5</div>
+			<div class="side side3 right">6</div>
+		</div>
+	</div>
+	<div class="per1">
+		<div class="cube">
+			<div class="side side1 front">1</div>
+			<div class="side side1 top">2</div>
+			<div class="side side1 back">3</div>
+			<div class="side side1 bottom">4</div>
+			<div class="side side1 left">5</div>
+			<div class="side side1 right">6</div>
+		</div>
+	</div>
+	<div class="per2"> 
+		<div class="cube">
+			<div class="side side2 front">1</div>
+			<div class="side side2 top">2</div>
+			<div class="side side2 back">3</div>
+			<div class="side side2 bottom">4</div>
+			<div class="side side2 left">5</div>
+			<div class="side side2 right">6</div>
+		</div>
+	</div>
+	<hr class="hr1">
+	<div> 
+		<div class="cube2">
+			<div class="side side4 front2">1</div>
+			<div class="side side4 kosina1">2</div>
+			<div class="side side4 top2">3</div>
+			<div class="side side4 kosina2">4</div>
+			<div class="side side4 back2">5</div>
+			<div class="side side4 kosina3">6</div>
+			<div class="side side4 bottom2">7</div>
+			<div class="side side4 kosina4">8</div>
+		</div>
+	</div>
+	<div class="okvir"></div>
+	<div>
+		<div class="tra1">Transition<span class="span1"> (Width+Box shadow)</span></div>
+		<div class="tra2">Transition</div>
+		<div class="tra3">Transition</div>
+		<div class="tra4">Transition</div>
+		<div class="tra5">Transition</div>
+		<div class="tra6">Transition</div>
+		<div class="tra7">Transition</div>
+		<div class="tra8"><img src="mig29.jpg" alt="MiG29" width="300" height="200"></div>
+		<div class="ani1">Animation</div>
+	</div>
+	<div class="sklapanje">
+		<div class="cube2">
+			<div class="side side5 front3">1</div>
+			<div class="side side5 kosina5">2</div>
+			<div class="side side5 top3">3</div>
+			<div class="side side5 kosina6">4</div>
+			<div class="side side5 back3">5</div>
+			<div class="side side5 kosina7">6</div>
+			<div class="side side5 bottom3">7</div>
+			<div class="side side5 kosina8">8</div>
+		</div>
+	</div>
+	<div class="sklapanje2">
+		<div class="cube2">
+			<div class="side side5 front4">1</div>
+			<div class="side side5 kosina9">2</div>
+			<div class="side side5 top4">3</div>
+			<div class="side side5 kosina10">4</div>
+			<div class="side side5 back4">5</div>
+			<div class="side side5 kosina11">6</div>
+			<div class="side side5 bottom4">7</div>
+			<div class="side side5 kosina12">8</div>
+		</div>
+	</div>
+	<div>
+		<ul class="ul1">
+			<li><a href="#">Link 1</a></li>
+			<li><a href="#">Link 2</a></li>
+			<li><a href="#">Link 3</a></li>
+			<li><a href="#">Link 4</a></li>
+			<li><a href="#">Link 5</a></li>
+		</ul>
+	</div>
+	<div class="ani2">Animacija</div>
+	<div class="ani3"><img src="mig29.jpg" alt="MiG29" width="300" height="200"></div>
+
+
+
+
+	
+
+
+
+</body>
+
+
+</html>

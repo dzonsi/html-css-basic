@@ -1,0 +1,42 @@
+.mixin(@color) {
+	color: @color;
+}
+
+.mixin(@color; @padding: 12px) {
+	color: @color;
+	padding: @padding;
+}
+
+.myclass {
+	.mixin(#FE9A2E);
+}
+// Mixins provide parameter values instead of positions by using their names.
+
+.mixin2(@color: black; @fontSize: 10px) {
+	color: @color;
+	font-size: @fontSize;
+}
+
+.class1 {
+	.mixin2(@fontSize: 20px; @color: #F5A9D0);
+}
+.class2 {
+	.mixin2(#F79F81; @fontSize: 20px)
+}
+.class3 {
+	.mixin2();
+}
+// You can change the behavior of mixin by passing parameters to it.
+
+.mixin3(dark; @color) {
+	color: darken(@color, 15%);
+}
+
+.mixin3(light; @color) {
+	color: lighten(@color, 15%);
+}
+@color-new: dark;
+
+.myclass2 {
+	.mixin3(@color-new; #FF0000);
+}

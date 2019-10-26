@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Backgrounds and Gradients</title>
+
+	<style>
+		html {background-image: url(liverpool.jpg), url(bayern.jpg), url(mig29.jpg);
+			  background-attachment: fixed, fixed, fixed;
+			  background-position: right bottom, top left, center;
+			  background-repeat: no-repeat, no-repeat, no-repeat;
+			  background-size: 224px 224px, 224px 224px, cover;
+		}
+		.div1 { float: left;
+				width: 20%;
+				box-sizing: border-box;
+				text-align: center;
+				height: 200px;
+				border: 1px solid black;
+				border-radius: 10px;
+				color: rgba(250, 250, 250, 0.5);
+				font-size: 150px;
+		}
+		.b1 {background-image: linear-gradient(to right, rgba(200, 200, 200, 0.1), rgba(100, 100, 100, 0.7));
+		}
+		.b2 {background-image: linear-gradient(to bottom, rgba(256, 256, 256, 0.1), rgba(100, 100, 0, 0.7));
+		}
+		.b3 {background-image: radial-gradient(circle, rgba(100, 0, 0, 0.9), rgba(256, 256, 256, 0.1));
+		}
+		.b4 {background-image: linear-gradient(to bottom right, rgba(0, 256, 30, 0.1), rgba(0, 256, 30, 0.5));
+		}
+		.b5 {background-image: linear-gradient(120deg, rgba(0, 256, 30, 0.1), rgba(0, 30, 256, 0.5));
+		}
+		.div2 {float: left;
+				width: 33.33%;
+				box-sizing: border-box;
+				text-align: center;
+				height: 300px;
+				border: 1px solid black;
+				border-radius: 10px;
+				color: rgba(250, 250, 250, 0.5);
+				font-size: 150px;
+		}
+		.b6 { background-image: repeating-linear-gradient(red, green 10%, blue 15%);
+		}
+		.b7 { background-image: radial-gradient(closest-side at 60% 45%, red 10%, green, blue);
+		}
+		.b8 { background-image: linear-gradient(35deg, black, yellow, white);
+		}
+		
+
+	</style>
+
+</head>
+
+<body>
+	<div class="div1 b1">A</div>
+	<div class="div1 b2">B</div>
+	<div class="div1 b3">C</div>
+	<div class="div1 b4">D</div>
+	<div class="div1 b5">E</div>
+	<div class="div2 b6">F</div>
+	<div class="div2 b7">G</div>
+	<div class="div2 b8">H</div>
+	
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+/* rgb converts rgb color to HEX*/
+.color1 {
+  color: #dc143c;
+}
+.color2 {
+  color: #ff40e6;
+}
+/* moze rgb u procentima 0% je 0, a 100% je 255*/
+/* rgba converts to rgba, moze u procentima*/
+.color3 {
+  color: rgba(100, 100, 100, 0.5);
+}
+.color4 {
+  color: rgba(128, 128, 179, 0.5);
+}
+/* argb it defines hex representation of color in #AARRGGBB format*/
+.color5 {
+  color: #80b0171f;
+}
+/* hsl converts hsl color to HEX color, njima, meni ostavlja u hsl */
+.color6 {
+  color: hsl(120, 100%, 50%);
+}
+.color7 {
+  color: hsl(240, 100%, 50%);
+}
+/* hsla generates color from hue, saturation, lightness and alpha values to rgba*/
+.color8 {
+  color: hsla(0, 100%, 50%, 0.5);
+}
+/* hsv it produces the color from hue, saturation and value values, to HEX */
+.color9 {
+  color: #7db312;
+}
+/* hsva produces the color form hue, saturation, value and alpha to rgba*/
+.color10 {
+  color: rgba(125, 179, 18, 0.5);
+}

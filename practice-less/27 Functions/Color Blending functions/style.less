@@ -1,0 +1,50 @@
+/* multiply it multiplies two colors and returns a resultant color, dark color*/
+.color1 {
+	color: multiply(white, black);
+	background-color: multiply(#ff6600, #0000ff);
+}
+/* screen it takes two colors and returns a brighter color.
+ It works opposite of multiply function. */
+.color2 {
+	color: screen(white, black);
+	background-color: screen(#ff6600, #0000ff);
+}
+/* overlay It generates result by combining the effect of multiply and screen.*/
+.color3 {
+	color: overlay(white, black);
+	background-color: overlay(#ff6600, #0000ff);
+}
+/* softlight It works similar to overlay but it uses only a part of the color,
+ which soft-highlights the other color. */
+.color4 {
+	color: softlight(white, black);
+	background-color: softlight(#ff6600, #0000ff);
+}
+/* hardlight It works similar to overlay but the role of the colors reversed.*/
+.color5 {
+	color: hardlight(white, black);
+	background-color: hardlight(#ff6600, #0000ff);
+}
+/* difference it subtracts the second input color from the first input color.*/
+.color6 {
+	color: difference(dodgerblue, white);
+	background-color: difference(#ff6600, #333333);
+}
+/* exclusion It works similar to difference function but with lower contrast.*/
+.color7 {
+	color: exclusion(dodgerblue, white);
+	background-color: exclusion(#ff6600, #333333);
+}
+/* average It computes the average of two input colors on
+ a per-channel (RGB) basis. */
+.color8 {
+	color: average(black, white);
+	background-color: average(#ff6600, #0000ff);
+	border: 1px solid average(rgb(50, 50, 0), rgb(120, 120, 0));
+}
+/* negation it works opposite to difference function,
+ which subtracts first color from second color. */
+.color9 {
+	color: negation(dodgerblue, white);
+	background-color: negation(#ff6600, #333333);
+}

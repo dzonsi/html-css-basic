@@ -1,0 +1,46 @@
+// The &:extend(selector) syntax can be put inside the body of ruleset.
+.container,
+.style {
+	&:extend(.img);
+}
+
+.img {
+	font-style: italic;
+	background-color: #7868EE;
+}
+// Nested selectors are matched using the extend selector.
+.style {
+	h3 {
+		color: #BF70A5;
+		font-size: 30px;
+	}
+}
+.img2:extend(.style h3){} // prazan blok se izvrsava na kraju
+// By default, the extend look for the exact match between the selectors
+.style2 h3,
+h3.style2 {
+	color: #BF70A5;
+	font-style: italic;
+}
+.img3:extend(.style2 h3){}
+/* The form of nth expression is important in extend, otherwise it treats
+ the selector as different. The nth expression 1n+2 and n+2 are equivalent
+  but extend treats this expression as different. */
+
+// In attribute selector, the quote type is not important as you can see
+//  it in the following example:
+[title = LESS] {
+	font-size: 25px;
+	color: dodgerblue;
+}
+[title ='LESS'] {
+	font-size: 25px;
+	color: dodgerblue;
+}
+[title = "LESS"] {
+	font-size: 25px;
+	color: dodgerblue;
+}
+.firsts:extend([title = LESS]) {}
+.second:extend([title = 'LESS']) {}
+.third:extend([title = "LESS"]) {}

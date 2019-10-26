@@ -1,0 +1,63 @@
+/* isnumber takes a value as parametar and returns true if it's a number
+or false otherwise. */
+.math1 {
+  font-size: true;
+  color: true;
+  top: false;
+}
+/* isstring takes a value as parameter and returns true, if it's a string or
+false otherwise. */
+.math2 {
+  font-size: true;
+  color: false;
+}
+/* iscolor takes a vlaue as parameter and returns true, if value is a color or
+false if it's not. */
+.math3 {
+  font-size: true;
+  color: true;
+  padding: false;
+}
+/* iskeyword takes a value as parameter and returns true if value is a keyword
+or false if it's not */
+.math4 {
+  font-size: true;
+  color: false;
+}
+/* isurl takes a value as parameter and returns true if value is a url
+or false if it's not. */
+.math5 {
+  font-size: true;
+  color: false;
+}
+/* ispixel takes a value as parameter and returns true if value is a number
+in pixels or false otherwise. */
+.math6 {
+  font-size: true;
+  color: false;
+}
+/* isem takes a value as parameter and returns true, if value is an em
+ value or false if it's not. */
+.math7 {
+  font-size: true;
+  color: false;
+}
+/* ispercentage takes a value as parameter and returns true, if value
+ is in percentage or returns false, if value is not in percentage. */
+.math8 {
+  font-size: true;
+  color: false;
+}
+/* isunit returns true if a value is a number in specified units provided
+  as parameter or it will return false if value is not a number in specified units.*/
+.math9 {
+  font-size: true;
+  color: true;
+  padding: false;
+}
+/* isruleset takes a value as parameter and returns true, if value is a ruleset
+   or false otherwise. */
+.math10 {
+  font-size: true;
+  color: false;
+}

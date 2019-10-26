@@ -1,0 +1,9 @@
+/* The optional keyword allows you to import a file whenever a file does not exist.
+ If the file to be imported does not exist and the optional keyword is not used then,
+  LESS throws FileError error and stops compiling. */
+
+@import (optional) "filenotexist.css";
+
+p {
+	color: red;
+}

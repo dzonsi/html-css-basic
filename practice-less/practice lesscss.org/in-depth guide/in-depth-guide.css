@@ -1,0 +1,632 @@
+/* VARIABLES */
+/* Overview */
+a,
+.link {
+  color: #428bca;
+}
+a:hover {
+  color: #3071a9;
+}
+.widget {
+  color: #fff;
+  background: #428bca;
+}
+/* Variable Interpolation */
+/* Selectors */
+.banner {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+/* URLs */
+body {
+  color: #444;
+  background: url("../img/white-sand.png");
+}
+/* Import statements
+@themes: "../../src/themes";
+@import "@{themes}/tidal-wave.less"; nema file pa nece da kompajlira less */
+/* Properties */
+.widget {
+  color: #0ee;
+  background-color: #999;
+}
+/* Variable Variables */
+.section .element {
+  color: green;
+}
+/* Lazy Evaluation */
+.lazy-eval {
+  width: 9%;
+}
+.class {
+  one: 1;
+}
+.class .brass {
+  three: 3;
+}
+/* Properties as Variables */
+.widget {
+  color: #efefef;
+  background-color: #efefef;
+}
+.block {
+  color: red;
+  color: blue;
+}
+.block .inner {
+  background-color: blue;
+}
+/* Default Variables */
+.test,
+.replacement {
+  color: red;
+  background-color: #990000;
+}
+/* PARENT SELECTORS */
+a {
+  color: blue;
+}
+a:hover {
+  color: green;
+}
+.button-ok {
+  background-image: url('ok.png');
+}
+.button-cancel {
+  background-image: url('cancel.png');
+}
+.button-custom {
+  background-image: url('custom.png');
+}
+/* Multiple & */
+.link + .link {
+  color: red;
+}
+.link .link {
+  color: green;
+}
+.link.link {
+  color: blue;
+}
+.link,
+.linkish {
+  color: cyan;
+}
+/* Note that & represents all parent selectors(not just the nearest ancsetor)*/
+.grand .parent > .grand .parent {
+  color: red;
+}
+.grand .parent .grand .parent {
+  color: green;
+}
+.grand .parent.grand .parent {
+  color: blue;
+}
+.grand .parent,
+.grand .parentish {
+  color: cyan;
+}
+/* Changing Selector Order */
+.header .menu {
+  border-radius: 5px;
+}
+.no-borderradius .header .menu {
+  background-image: url("images/button-background.png");
+}
+/* Combinatorial Explosion */
+p,
+a,
+ul,
+li {
+  border-top: 2px dotted #366;
+}
+p + p,
+p + a,
+p + ul,
+p + li,
+a + p,
+a + a,
+a + ul,
+a + li,
+ul + p,
+ul + a,
+ul + ul,
+ul + li,
+li + p,
+li + a,
+li + ul,
+li + li {
+  border-top: 0;
+}
+/* EXTEND */
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+/* Extend syntax */
+.b,
+.a,
+.a,
+.f,
+.f,
+.f {
+  padding: 5px;
+}
+.a,
+.f {
+  color: navy;
+}
+.a,
+.f {
+  color: linen;
+}
+.c,
+.d,
+.e,
+.f {
+  color: tomato;
+}
+.c h1,
+.e h1 {
+  font-size: 20px;
+}
+/* Extend attached to selector */
+.bag,
+.big-bag {
+  color: navy;
+}
+.bucket,
+.big-bucket {
+  color: dodgerblue;
+}
+.big-division,
+.big-bag,
+.big-bucket {
+  font-size: 30px;
+}
+/* Extend inside ruleset */
+div pre,
+pre:hover,
+.some-class {
+  color: red;
+}
+/* Extending nested selectors */
+.bucket tr,
+.some-class {
+  color: blue;
+}
+tr .bucket,
+.some-class {
+  color: red;
+}
+/* Exact matching with Extend */
+/* Extend by default looks for exact match between selectors!!! */
+.a.class,
+.class.a,
+.class > .a {
+  color: blue;
+}
+/* .test:extend(.class) {} THIS WILL NOT MATCH ANY SELECTOR ABOVE */
+.link:hover:visited {
+  color: blue;
+}
+/* .selector:extend(.link:visited:hover) {} THIS WILL NOT MATCH */
+:nth-child(1n+3) {
+  color: blue;
+}
+/* .child:extend(:nth-child(n+3)) {} THIS WILL NOT MATCH */
+/* Quote type in attribute selector does not matter!!! */
+[title=identifier],
+.noQuote,
+.singleQuote,
+.doubleQuote {
+  color: blue;
+}
+[title='identifier'],
+.noQuote,
+.singleQuote,
+.doubleQuote {
+  color: blue;
+}
+[title="identifier"],
+.noQuote,
+.singleQuote,
+.doubleQuote {
+  color: blue;
+}
+/* Extend "all" */
+.a.b.test,
+.test.c,
+.test.e,
+.a.b.replacement,
+.replacement.c {
+  color: orange;
+}
+.test:hover,
+.replacement:hover {
+  color: green;
+}
+/* Selector interpolation with extend */
+/* Extend is NOT able to match selectors with variables */
+.bucket2 {
+  color: blue;
+}
+/* .some-cless.extend(.bucket) {} does nothing, NO MATCH IS FOUND */
+.bucket2 {
+  color: blue;
+}
+/* .some-class.extend(@{variable}) {} does nothing, NO MATCH IS FOUND */
+/* nece da radi, a ne izbacuje gresku */
+/* Scoping / Extend Inside @media */
+/* Currently, an :extend inside a @media declaration will only match
+ selectors inside the same media declaration! */
+@media print {
+  .selector,
+  .screenClass {
+    color: black;
+  }
+}
+.selector {
+  color: red;
+}
+@media screen {
+  .selector {
+    color: blue;
+  }
+}
+/* extending does not match selectors inside a nested @media declaration:*/
+@media screen {
+}
+@media screen and (min-width: 1023px) {
+  .selector {
+    color: blue;
+  }
+}
+/* Top level extend matches everything including selectors inside nested media:*/
+@media screen {
+  .selector3,
+  .topLevel {
+    /* ruleset inside nested media - top level extend works */
+    color: blue;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .selector3,
+  .topLevel {
+    /* ruleset inside nested media - top level extend works */
+    color: blue;
+  }
+}
+/* Duplication Detection */
+/* Currently there is no duplication detection. */
+.alert-info,
+.widget2,
+.alert,
+.alert {
+  color: green;
+}
+.alert {
+  border: none;
+}
+/* Use Cases for Extend */
+/* Classic Use Case nema potrebe prosirivati HTML novom klasom,
+koristeci extend zamenimo staru sa novom, koja uzima sve iz stare,
+plus dodamo sta zelimo! */
+/* Reducing CSS Size nema potrebe da se koristi mixin,lakse je
+sa extend, manji je CSS kod */
+/* Combining Styles / A More Advanced Mixin drugi slucaj alternative
+za mixin, posto mixin moze da se koristi samo sa "simple selectors"*/
+/* MERGE */
+/* Comma append property with comma*/
+.myclass {
+  box-shadow: inset 0 0 10px #555, 0 0 20px black;
+}
+/* Space append property with space */
+.myclass {
+  transform: scale(2) rotate(15deg);
+}
+/* MIXING */
+.aa,
+#bb {
+  color: red;
+}
+.mixin-class {
+  color: red;
+}
+.mixin-id {
+  color: red;
+}
+/* Not Outputting the Mixin */
+.my-mixin {
+  color: black;
+}
+.class {
+  color: black;
+  background: white;
+}
+/* Selectors in Mixins */
+button:hover {
+  border: 1px solid red;
+}
+/* Namespaces */
+.cc {
+  color: red;
+}
+/* both > and whitespace are optional */
+.cc2 {
+  color: red;
+}
+.cc3 {
+  color: red;
+}
+.cc4 {
+  color: black;
+}
+.cc5 {
+  padding: 10px;
+}
+/* Guarded Namespaces if a namespace has a guard, mixins defined
+ by it are used only if the guard condition returns true. */
+/* following two mixins work the same way:
+
+#namespace when (@mode = huge) {
+	.mixin() {  }
+}
+
+#namespace {
+  .mixin() when (@mode = huge) {  }
+}
+*/
+/* The !important keyword */
+.unimportant {
+  background: #f5f5f5;
+  color: #900;
+}
+.important {
+  background: #f5f5f5 !important;
+  color: #900 !important;
+}
+/* Parametric Mixins */
+#header {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.button {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+#header2 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#header3 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.pre {
+  text-wrap: wrap;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* Mixins with Multiple Parametars */
+.some .selector div {
+  color-1: #000000;
+  color-2: #000000;
+  padding-2: 2;
+}
+.some2 .selector div {
+  color-3: red;
+  padding-3: 2px;
+  margin: 5px 5px 5px 5px;
+}
+/* Named Parameters */
+.class1 {
+  color: black;
+  margin: 10px;
+  padding: 20px;
+}
+.class2 {
+  color: #efca44;
+  margin: 10px;
+  padding: 40px;
+}
+.class3 {
+  color: #33acfe;
+  margin: 20px;
+  padding: 20px;
+}
+/* The @arguments Variable */
+.big-block {
+  -webkit-box-shadow: 2px 5px 1px #000;
+  -moz-box-shadow: 2px 5px 1px #000;
+  box-shadow: 2px 5px 1px #000;
+}
+/* Advanced Arguments and the @rest Variable */
+/* You can use ... if you want your mixin to take a variable
+ number of arguments. Using this after a variable name will
+  assign those arguments to the variable. */
+/* Pattern-matching */
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+/* Using Mixins as Functions */
+/* Property / value accessors */
+div {
+  padding: 33px;
+}
+/* Overriding mixin values */
+.box {
+  my-value: bar;
+}
+/* Unnamed lookups */
+.box {
+  my-value: foo;
+}
+.box2 {
+  my-value: foo;
+}
+.box3 {
+  my-value: buu;
+}
+/* Recrusive Mixins */
+div {
+  width: 10px;
+  width: 20px;
+  width: 30px;
+  width: 40px;
+  width: 50px;
+}
+.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}
+/* Mixin Guards */
+.class1 {
+  background-color: black;
+  color: #ddd;
+}
+.class2 {
+  background-color: white;
+  color: #555;
+}
+/* Guard Comparison Operators */
+/* Operator usuable in guards are >, >=, =, =<, < */
+/* Keyword TRUE is the only truthy value */
+/* true */
+/* false */
+/* Guard Logical Operators */
+/*.mixin(@a) when (isnumber(@a)) and (@a > 0) { ... }  oba true, kao && */
+/*.mixin(@a) when (@a > 10), (@a < -10) { ... }  jedan true, kao || */
+/*.mixin(@b) when not (@b > 0) { ... }  use not to negate conditions */
+/* Type checking functions */
+.class {
+  color: navy;
+  padding: 10px;
+}
+.class2 {
+  display: inline-block;
+  color: mediumseagreen;
+}
+.class3 {
+  padding: 25px;
+}
+/* Aliasing Mixins */
+.navbar {
+  background: black;
+  border: 1px solid grey;
+}
+/* Variable Calls */
+.box {
+  background: green;
+}
+/* CSS Guards */
+button {
+  color: white;
+}
+button {
+  color: green;
+}
+a {
+  color: blue;
+}
+/* Detached Rulesets */
+.top {
+  background-color: red;
+}
+header {
+  background-color: blue;
+}
+@media screen and (min-width: 1200px) {
+  header {
+    background-color: red;
+  }
+}
+html.lt-ie9 header {
+  background-color: red;
+}
+@media (orientation: portrait) and tv {
+  .my-selector {
+    background-color: black;
+  }
+}
+.caller {
+  color: blue;
+}
+/* Scoping */
+/* Definition and Caller Scope Visibility */
+.selector {
+  caller-variable: value;
+  variable: declaration;
+}
+.selector {
+  variable: value;
+}
+/* Kod mene ne ignosire @variable5 deklarisanu u caller-u!!!*/
+/* Referencing Won't Modify Detached Ruleset Scope */
+.use-place {
+  scope-detached: visible visible;
+}
+/* Njima throws an arror, meni se izvrsava kako treba! */
+/* Unlocking Will Modify Detached Ruleset Scope */
+.use-place {
+  scope-detached: value;
+}
+/* Property / variable accessors */
+.box {
+  selected: value;
+}
+.box {
+  color: blue;
+}
+.box {
+  color: darkblue;
+}
+/* @import */
+/* @plugin */
+/*
+@plugin "my-plugin.js";
+.show-me-pi {
+	value: pi();
+} nece da radi, unexpected token */
+/* Maps */
+.navbar {
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar {
+    display: inline-block;
+  }
+}
+.button {
+  color: grey;
+  border-color: blue;
+}
+.button2 {
+  color: grey;
+  border-color: blue;
+}
+.produce-ruleset {
+  prop: val;
+}
+/* Using variable variables in lookups */
+.lunch {
+  treat: ice cream;
+}

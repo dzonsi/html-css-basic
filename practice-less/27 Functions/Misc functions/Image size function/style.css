@@ -1,0 +1,6 @@
+/* It is used to examine the dimension of the image from the file.
+ It examines both the width and the height of the image. */
+body {
+  background-image: url("C:/Users/Nikola/Desktop/images/black-brick.jpg");
+  image-size: 1920px 1080px;
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Navigation Bar</title>
+	
+	<style>
+		body { font-size: 100%;
+		}
+		.naslov1 {background-image: url("pitch.jpg");
+				 width: 100%;
+				 max-height: 150px;
+				 border-style: solid;
+				 border-color: black;
+				 border-width: 1px;
+				 overflow: auto;
+				 padding: 0;
+		}
+		.naslov2 {background-color: white;
+				  opacity: 0.5;
+				  border-style: solid;
+				  border-color: black;
+				  border-width: 1px;
+				  width: 30%;
+				  margin: auto;
+				  overflow: auto;
+		}
+		.naslov3 {text-align: center;
+		}
+		@media screen and (max-width: 800px) {.naslov2 {width: 80%;
+			}
+		}
+		.nav1 { border: 1px solid black;
+				position: sticky;
+				top: 0;
+		}
+		@media screen and (max-width: 800px) {.nav1 {position: static;
+			}
+		}
+		.nav1 ul { list-style-type: none;
+				   margin: 0;
+				   padding: 0;
+				   background-color: #333;
+				   overflow: hidden;
+		}
+		.nav1 li { float: left;
+		}
+		.nav1 a { text-decoration: none;
+				 display: block;
+				 color: white;
+				 text-align: center;
+				 padding: 15px 15px;
+		}
+		.nav1 a:hover { background-color: black;
+		}
+		#about1 { float: right;
+		}
+		#about1 a { background-color: #4CAF50;
+		}
+		#about1 a:hover { background-color: black;
+		}
+		@media screen and (max-width: 800px) {.nav1 li { float: none;
+			}
+		}
+		.slike1 { width: 100%;
+				  text-align: center;
+		}
+		.slike1 img { display: inline-block;
+		}
+		.nav2 { border: 1px solid black;
+		}
+		.nav2 ul { list-style-type: none;
+				   margin: 0;
+				   padding: 0;
+				   background-color: black;
+				   overflow: hidden;
+		}
+		.nav2 li { float: left;
+		}
+		.nav2 a { text-decoration: none;
+				 display: block;
+				 color: white;
+				 text-align: center;
+				 padding: 15px 15px;
+				 border-bottom: 3px solid black;
+		}
+		.nav2 a:hover { border-bottom: 3px solid #fb090b;
+		}
+		.milan1 { background-color: #fb090b;
+				  color: black;
+				  display: block;
+				  padding: 15px 15px;
+				  text-align: center;
+		}
+		.milan1 h1 { font-size: 16px;
+					 margin: 0;
+					 border-bottom: 3px solid #fb090b;
+		}
+		@media screen and (max-width: 800px) {.nav2 li { float: none;
+			}
+		}
+		.iframe1 { width: 100%;
+				   height: 500px;
+		}
+		.nav3 { border: 1px solid black;
+		}
+		.nav3 ul { list-style-type: none;
+				   margin: 0;
+				   padding: 0;
+				   background-color: rgb(131, 20, 46);
+				   overflow: hidden;
+				   border-style: hidden;
+				   border-width: 3px;
+		}
+		.nav3 li { float: left;
+		}
+		.nav3 a { text-decoration: none;
+				 display: block;
+				 color: white;
+				 text-align: center;
+				 padding: 15px 15px;
+				 border-bottom: 3px solid rgb(131, 20, 46);
+		}
+		.nav3 a:hover { border-bottom: 3px solid white;
+		}
+		.bayern1 { background-color: rgb(12, 42, 95);
+				  color: white;
+				  display: block;
+				  padding: 15px 15px;
+				  text-align: center;
+				  border-style: hidden;
+				  border-width: 3px;
+		}
+		.bayern1 h1 { font-size: 16px;
+					 margin: 0;
+					 border-bottom: 3px solid rgb(12, 42, 95);
+		}
+		@media screen and (max-width: 800px) {.nav3 li { float: none;
+			}
+		}
+		.iframe2 { width: 100%;
+				   height: 500px;
+		}
+		.nav4 { border: 1px solid black;
+		}
+		.nav4 ul { list-style-type: none;
+				   margin: 0;
+				   padding: 0;
+				   background-color: #c8102E;
+				   overflow: hidden;
+		}
+		.nav4 li { float: left;
+		}
+		.nav4 a { text-decoration: none;
+				 display: block;
+				 color: white;
+				 text-align: center;
+				 padding: 15px 15px;
+		}
+		.nav4 a:hover { background-color: #00B2A9;
+		}
+		.liverpool1 { background-color: rgb(240, 240, 240);
+				  color: #c8102E;
+				  display: block;
+				  padding: 15px 15px;
+				  text-align: center;
+		}
+		.liverpool1 h1 { font-size: 16px;
+					 margin: 0;
+		}
+		@media screen and (max-width: 800px) {.nav4 li { float: none;
+			}
+		}
+		.iframe3 { width: 100%;
+				   height: 500px;
+		}
+		.nav5 { border: 1px solid black;
+		}
+		.nav5 ul { list-style-type: none;
+				   margin: 0;
+				   padding: 0;
+				   background-color: #db002c;
+				   overflow: hidden;
+		}
+		.nav5 li { float: left;
+		}
+		.nav5 a { text-decoration: none;
+				 display: block;
+				 color: white;
+				 text-align: center;
+				 padding: 15px 15px;
+		}
+		.nav5 a:hover { background-color: #a70042;
+		}
+		.barcelona1 { background-color: #004c99;
+				  color: white;
+				  display: block;
+				  padding: 15px 15px;
+				  text-align: center;
+		}
+		.barcelona1 h1 { font-size: 16px;
+					 margin: 0;
+		}
+		@media screen and (max-width: 800px) {.nav5 li { float: none;
+			}
+		}
+		.iframe4 { width: 100%;
+				   height: 500px;
+		}
+		.nav6 { border: 1px solid black;
+		}
+		.nav6 ul { list-style-type: none;
+				   margin: 0;
+				   padding: 0;
+				   background-color: #FEBE10;
+				   overflow: hidden;
+		}
+		.nav6 li { float: left;
+		}
+		.nav6 a { text-decoration: none;
+				 display: block;
+				 color: #00529F;
+				 text-align: center;
+				 padding: 15px 15px;
+		}
+		.nav6 a:hover { background-color: white;
+		}
+		.realmadrid1 { background-color: #004c99;
+				  color: white;
+				  display: block;
+				  padding: 15px 15px;
+				  text-align: center;
+		}
+		.realmadrid1 h1 { font-size: 16px;
+					 margin: 0;
+		}
+		@media screen and (max-width: 800px) {.nav6 li { float: none;
+			}
+		}
+		.iframe5 { width: 100%;
+				   height: 500px;
+		}
+		.dropdown { display: inline-block;
+		}
+		.dropbtn { display: inline-block;
+		}
+		.dropdown-content { display: none;
+							position: absolute;
+							min-width: 160px;
+							box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+							z-index: 1;
+							right: 0;
+		}
+		.dropdown-content a { background-color: rgb(230, 230, 230);
+		}
+		.dropdown:hover .dropdown-content { display: block;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="naslov1">
+		<div class="naslov2">
+			<h1 class="naslov3">Navigation&nbsp;Bar</h1>
+		</div>
+	</div>
+	<div class="nav1">
+		<ul>
+			<li><a href="#target6">AC&nbsp;MILAN</a></li>
+			<li><a href="#target7">FC&nbsp;BAYERN</a></li>
+			<li><a href="#target8">LIVERPOOL&nbsp;FC</a></li>
+			<li><a href="#target9">FC&nbsp;BARCELONA</a></li>
+			<li><a href="#target10">REAL&nbsp;MADRID</a></li>
+			<li id="about1" class="dropdown">
+				<a class="dropbtn" href="">ABOUT</a>
+				<div class="dropdown-content">
+					<a href="https://www.acmilan.com/en">AC&nbsp;MILAN</a>
+					<a href="https://fcbayern.com/en">FC&nbsp;BAYERN</a>
+					<a href="https://www.liverpoolfc.com/">LIVERPOOL&nbsp;FC</a>
+					<a href="https://www.fcbarcelona.com/">FC&nbsp;BARCELONA</a>
+					<a href="https://www.realmadrid.com/">REAL&nbsp;MADRID</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="slike1">
+		<img src="milan.jpg" alt="milan" width="250" height="250">
+		<img src="bayern.jpg" alt="bayern" width="250" height="250">
+		<img src="liverpool.jpg" alt="liverpool" width="250" height="250">
+		<img src="barcelona.jpg" alt="barcelona" width="250" height="250">
+		<img src="realmadrid.jpg" alt="realmadrid" width="250" height="250">
+	</div>
+	<div class="nav2">
+		<ul>
+			<li class="milan1"><h1 id="target6">AC&nbsp;MILAN</h1></li>
+			<li><a href="https://www.acmilan.com/en/news/all-news" target="target1">NEWS</a></li>
+			<li><a href="https://www.acmilan.com/en/team/first-team" target="target1">TEAM</a></li>
+			<li><a href="https://www.acmilan.com/en/season/serie-a" target="target1">SEASON</a></li>
+			<li><a href="https://www.acmilan.com/en/club/history" target="target1">HISTORY</a></li>
+			<li><a href="http://store.acmilan.com/en?___from_store=it&utm_source=Sito_ACM&utm_medium=Tab_Shop_ENG&utm_campaign=e-store&utm_content=link1" target="target1">SHOP</a></li>
+		</ul>
+	</div>
+	<div>
+		<iframe class="iframe1" name="target1" src="https://www.acmilan.com/en/news/all-news"></iframe>
+	</div>
+	<div class="nav3">
+		<ul>
+			<li class="bayern1"><h1 id="target7">FC&nbsp;BAYERN</h1></li>
+			<li><a href="https://fcbayern.com/en/news#" target="target2">NEWS</a></li>
+			<li><a href="https://fcbayern.com/en/teams" target="target2">TEAMS</a></li>
+			<li><a href="https://fcbayern.com/en/fixtures/profis" target="target2">MATCHES</a></li>
+			<li><a href="https://fcbayern.com/en/club" target="target2">CLUB</a></li>
+			<li><a href="https://fcbayern.com/en/fans" target="target2">FANS</a></li>
+		</ul>
+	</div>
+	<div>
+		<iframe class="iframe2" name="target2" src="https://fcbayern.com/en/news#"></iframe>
+	</div>
+	<div class="nav4">
+		<ul>
+			<li class="liverpool1"><h1 id="target8">LIVERPOOL&nbsp;FC</h1></li>
+			<li><a href="https://www.liverpoolfc.com/news" target="target3">NEWS</a></li>
+			<li><a href="https://www.liverpoolfc.com/match/2018-19/first-team/fixtures-and-results" target="target3">MATCH</a></li>
+			<li><a href="https://www.liverpoolfc.com/team/first-team" target="target3">TEAM</a></li>
+			<li><a href="https://www.liverpoolfc.com/fans/social-media/lfc-on-social-media" target="target3">FANS</a></li>
+			<li><a href="https://store.liverpoolfc.com/" target="target3">SHOP</a></li>
+		</ul>
+	</div>
+	<div>
+		<iframe class="iframe3" name="target3" src="https://www.liverpoolfc.com/news"></iframe>
+	</div>
+	<div class="nav5">
+		<ul>
+			<li class="barcelona1"><h1 id="target9">FC&nbsp;BARCELONA</h1></li>
+			<li><a href="https://www.fcbarcelona.com/news" target="target4">NEWS</a></li>
+			<li><a href="https://www.fcbarcelona.com/football/first-team/staff/players" target="target4">FOOTBALL</a></li>
+			<li><a href="https://www.fcbarcelona.com/club/history/decade-by-decade" target="target4">CLUB</a></li>
+			<li><a href="https://www.fcbarcelona.com/club/facilities/card/camp-nou-a-five-star-stadium" target="target4">CAMP&nbsp;NOU</a></li>
+			<li><a href="https://www.fcbarcelona.com/fans" target="target4">FANS</a></li>
+		</ul>
+	</div>
+	<div>
+		<iframe class="iframe4" name="target4" src="https://www.fcbarcelona.com"></iframe>
+	</div>
+	<div class="nav6">
+		<ul>
+			<li class="realmadrid1"><h1 id="target10">REAL&nbsp;MADRID</h1></li>
+			<li><a href="https://www.realmadrid.com/en/football" target="target5">LATES</a></li>
+			<li><a href="https://www.realmadrid.com/en/football/schedule" target="target5">FIXTURES</a></li>
+			<li><a href="https://www.realmadrid.com/en/football/news" target="target5">NEWS</a></li>
+			<li><a href="https://www.realmadrid.com/en/football/squad" target="target5">SQUAD</a></li>
+			<li><a href="https://www.realmadrid.com/en/about-real-madrid/history/football" target="target5">HISTORY</a></li>
+		</ul>
+	</div>
+	<div>
+		<iframe class="iframe5" name="target5" src="https://www.realmadrid.com/en/football"></iframe>
+	</div>
+
+
+
+	
+
+
+</body>
+
+</html>

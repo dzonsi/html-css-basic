@@ -1,0 +1,532 @@
+/* LOGICAL FUNCTIONS */
+/* if */
+div {
+  margin: 0;
+  color: #cc0000;
+}
+/* ako je vrednos @some nesto drugo,nece da radi, ipak izvrsava funkciju darken*/
+/* boolean */
+div {
+  background: black;
+  color: white;
+}
+/* STRING FUNCTIONS */
+/* escape */
+p {
+  color: a%3D1;
+}
+/* e (String escaping)
+@mscode: "ms:alwaysHasItsOwnSyntax.For.Stuff()"
+.class {
+	filter: e(@mscode);
+} nece da radi */
+/* % format
+input:
+format-a-d: %("repetitions: %a file: %d", 1 + 2, "directory/file.less");
+format-a-d-upper: %('repetitions: %A file: %D', 1 + 2, "directory/file.less");
+format-s: %("repetitions: %s file: %s", 1 + 2, "directory/file.less");
+format-s-upper: %('repetitions: %S file: %S', 1 + 2, "directory/file.less");
+
+output:
+format-a-d: "repetitions: 3 file: "directory/file.less"";
+format-a-d-upper: "repetitions: 3 file: %22directory%2Ffile.less%22";
+format-s: "repetitions: 3 file: directory/file.less";
+format-s-upper: "repetitions: 3 file: directory%2Ffile.less";
+
+*/
+/* replace
+input:
+replace("Hello, Mars?", "Mars\?", "Earth!");
+replace("One + one = 4", "one", "2", "gi");
+replace('This is a string.', "(string)\.$", "new $1.");
+replace(~"bar-1", '1', '2');
+
+output:
+"Hello, Earth!";
+"2 + 2 = 4";
+'This is a new string.';
+bar-2;
+
+*/
+/* LIST FUNCTIONS */
+/* length */
+.first {
+  padding: 4;
+  color: 3;
+}
+/* extract */
+.second {
+  padding: 15px;
+}
+/* range */
+.third {
+  padding: 20px 40px 60px 80px;
+  margin: 5px 10px 15px 20px;
+}
+/* each */
+.sel-dodgerblue {
+  padding: 4px;
+}
+.sel-mediumseagreen {
+  padding: 4px;
+}
+.sel-tomato {
+  padding: 4px;
+}
+.set {
+  one-1: blue;
+  two-2: green;
+  three-3: red;
+}
+.link-blue {
+  color: blue;
+}
+.link-green {
+  color: green;
+}
+.link-red {
+  color: red;
+}
+/* setting variable names in each */
+.set-2 {
+  one-1: blue;
+  two-2: green;
+  three-3: red;
+}
+/* creating a for loop using range and each */
+.col-1 {
+  height: 50px;
+}
+.col-2 {
+  height: 100px;
+}
+.col-3 {
+  height: 150px;
+}
+.col-4 {
+  height: 200px;
+}
+/* MATH FUNCTION */
+/* ceil */
+.test {
+  color: 4;
+}
+/* floor */
+.test2 {
+  color: 1;
+}
+/* percentage */
+.test3 {
+  width: 70%;
+  height: 50%;
+}
+/* round */
+.test4 {
+  width: 2;
+  height: 1.65;
+}
+/* sqrt */
+.test5 {
+  width: 20px;
+  height: 50%;
+}
+/* abs */
+.test6 {
+  width: 700px;
+  height: 50%;
+}
+/* sin */
+.test7 {
+  color: 0.8660254;
+  padding: 0.84147098;
+}
+/* asin */
+.test8 {
+  color: 0.52359878rad;
+  padding: 1.57079633rad;
+}
+/* cos */
+.test9 {
+  color: 0.70710678;
+  padding: 0.76484219;
+}
+/* acos */
+.test10 {
+  color: 0.79539883rad;
+  padding: 1.98231317rad;
+}
+/* tan */
+.test11 {
+  color: 1.55740772;
+  padding: 0.36397023;
+}
+/* atan */
+.test12 {
+  color: 0.78539816rad;
+  padding: 0.7854rad;
+}
+/* pi */
+.test13 {
+  color: 3.14159265;
+  padding: 3.14159;
+}
+/* pow */
+.test14 {
+  color: 243;
+  padding: 25px;
+  height: 49%;
+  width: 0.25%;
+}
+/* mod */
+.test15 {
+  color: 2px;
+  padding: 5cm;
+  height: -3%;
+}
+/* min */
+.test16 {
+  color: 5;
+  height: 4px;
+  width: 9%;
+}
+/* max */
+.test17 {
+  color: 300;
+  padding: 30px;
+  height: 25px;
+}
+/* TYPE FUNCTION */
+/* isnumber */
+.test18 {
+  color: true;
+  padding: true;
+  color: false;
+  height: false;
+}
+/* isstring */
+.test19 {
+  color: false;
+  padding: true;
+  height: false;
+}
+/* iscolor */
+.test20 {
+  color: true;
+  padding: false;
+  height: true;
+}
+/* iskeyword */
+.test21 {
+  color: true;
+  padding: true;
+  height: false;
+  width: true;
+}
+/* isurl */
+.test22 {
+  color: false;
+  padding: false;
+  height: true;
+  width: false;
+}
+/* ispixel */
+.test23 {
+  color: false;
+  padding: false;
+  height: true;
+  width: false;
+}
+/* isem */
+.test24 {
+  color: false;
+  padding: false;
+  height: true;
+  width: false;
+}
+/* ispercentage */
+.test25 {
+  color: true;
+  padding: false;
+  height: true;
+}
+/* isunit */
+.test26 {
+  color: true;
+  padding: false;
+  height: false;
+}
+/* isruleset */
+.test27 {
+  color: true;
+  padding: false;
+  height: false;
+}
+/* MISC FUNCTIONS */
+/* color */
+.test28 {
+  color: #aaa;
+  background-color: #faf0e6;
+}
+/* image-size */
+.test29 {
+  padding: 1920px 1080px;
+}
+/* image-width */
+.test30 {
+  padding: 1920px;
+}
+/* image-height */
+.test31 {
+  padding: 1080px;
+}
+/* convert */
+.test32 {
+  color: 7000ms;
+  padding: 57.29577951deg;
+  height: 140mm;
+}
+/* data-uri ne razumem! */
+/* default */
+.test34 {
+  z: 3;
+}
+.test35 {
+  y: 12;
+}
+.test36 {
+  width: 100px;
+  padding: 20px;
+}
+.test38 {
+  always: 1;
+}
+.test39 {
+  color: default();
+  padding: default(33);
+}
+/* unit */
+.test40 {
+  color: 5px;
+  padding: 33em;
+  height: 33;
+}
+/* get-unit */
+.test41 {
+  color: %;
+  padding: em;
+}
+/* svg-gradient */
+.test41 {
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201%201%22%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%220%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff0000%22%2F%3E%3Cstop%20offset%3D%2230%25%22%20stop-color%3D%22%23008000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230000ff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23g)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+/* COLOR DEFINITION FUNCTIONS */
+/* rgb */
+.test42 {
+  color: #ff0000;
+  background-color: #00ff00;
+}
+/* rgba */
+.test43 {
+  color: rgba(255, 0, 0, 0.1);
+  background-color: rgba(0, 255, 0, 0.5);
+}
+/* argb */
+.test44 {
+  color: #1aff0000;
+  background-color: #8000ff00;
+}
+/* hsl */
+.test45 {
+  color: hsl(100, 100%, 50%);
+  background-color: hsl(200, 90%, 70%);
+}
+/* hsla */
+.test46 {
+  color: hsla(100, 100%, 50%, 0.2);
+  background-color: hsla(200, 90%, 70%, 0.4);
+}
+/* hsva */
+.test47 {
+  color: rgba(85, 128, 0, 0.5);
+  background-color: rgba(144, 153, 15, 0.9);
+}
+/* COLOR CHANNEL FUNCTIONS */
+/* hue */
+.test48 {
+  color: 1;
+  background-color: 300;
+}
+/* saturation */
+.test49 {
+  color: 80%;
+  background-color: 20%;
+}
+/* lightness */
+.test50 {
+  color: 70%;
+  background-color: 90%;
+}
+/* hsvhur */
+.test51 {
+  color: 300;
+  background-color: 20;
+}
+/* hsvsaturation */
+.test52 {
+  color: 100%;
+  background-color: 60%;
+}
+/* hsvvalue */
+.test53 {
+  color: 30%;
+  background-color: 90%;
+}
+/* red */
+.test54 {
+  color: 10;
+  background-color: 241;
+  background: 255;
+}
+/* green */
+.test55 {
+  color: 39;
+  background-color: 44;
+  background: 99;
+}
+/* blue */
+.test55 {
+  color: 20;
+  background-color: 141;
+  background: 71;
+}
+/* alpha */
+.test56 {
+  color: 0.3;
+  background: 0.6;
+}
+/* luma */
+.test57 {
+  color: 6.71137458%;
+  background: 10.31820157%;
+}
+/* luminanace */
+.test58 {
+  color: 13.23541176%;
+  background: 13.6704%;
+}
+/* COLOR OPERATION FUNCTIONS */
+/* saturate */
+.test59 {
+  color: hsl(120, 100%, 50%);
+  background-color: hsl(120, 96%, 50%);
+}
+/* desaturate */
+.test60 {
+  color: hsl(120, 60%, 50%);
+  background-color: hsl(120, 64%, 50%);
+}
+/* lighten */
+.test61 {
+  color: hsl(120, 80%, 70%);
+  background-color: hsl(120, 80%, 60%);
+}
+/* darken */
+.test62 {
+  color: hsl(120, 80%, 30%);
+  background-color: hsl(120, 80%, 40%);
+}
+/* hadein */
+.test63 {
+  color: hsla(90, 80%, 50%, 0.7);
+  background-color: rgba(200, 200, 200, 0.39);
+}
+/* fadeout */
+.test63 {
+  color: hsla(90, 80%, 50%, 0.3);
+  background-color: rgba(200, 200, 200, 0.21);
+}
+/* fade */
+.test64 {
+  color: hsla(90, 80%, 50%, 0.2);
+  background-color: rgba(200, 200, 200, 0.3);
+}
+/* spin */
+.test65 {
+  color: hsl(50, 90%, 50%);
+  background-color: hsl(330, 100%, 50%);
+  background: #1431c9;
+}
+/* mix */
+.test66 {
+  color: #800080;
+  background-color: rgba(30, 155, 98, 0.6);
+  background: rgba(75, 195, 86, 0.94);
+}
+/* tint */
+.test67 {
+  color: #ff8080;
+  background-color: rgba(228, 244, 252, 0.94);
+  background: #e7e7e7;
+}
+/* shade */
+.test67 {
+  color: #800000;
+  background-color: rgba(3, 19, 27, 0.94);
+  background: #020202;
+}
+/* grayscale */
+.test68 {
+  color: hsl(0, 0%, 50%);
+  background-color: #808080;
+}
+/* contrast */
+.test69 {
+  color: #000000;
+  background-color: #000000;
+}
+/* COLOR BLENDING FUNCTIONS */
+/* multiply */
+.test70 {
+  color: #331400;
+  background-color: #4e0000;
+}
+/* screen */
+.test71 {
+  color: #ff8533;
+  background-color: #de0000;
+}
+/* overlay */
+.test72 {
+  color: #ff2900;
+  background-color: #bc0000;
+}
+/* softlight */
+.test73 {
+  color: #ff4100;
+  background-color: #bf0000;
+}
+/* hardlight */
+.test74 {
+  color: #662900;
+  background-color: #9d0000;
+}
+/* difference */
+.test75 {
+  color: #cc3333;
+  background-color: #640000;
+}
+/* exclusion */
+.test76 {
+  color: #cc7033;
+  background-color: #8f0000;
+}
+/* average */
+.test77 {
+  color: #994d1a;
+  background-color: #960000;
+}
+/* negation */
+.test78 {
+  color: #cc9933;
+  background-color: #d20000;
+}

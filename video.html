@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vezba sa videom!</title>
+</head>
+<body>
+	<video width="500" height="300" controls>
+		<source src="mov_bbb.mp4" type="video/mp4">
+		Pretrazivac ne podrzava video klip!
+	</video>
+	<div style="text-align: center;">
+		<video id="video1" width="500" height="300">
+		<source src="mov_bbb.mp4" type="video/mp4">
+		Pretrazivac ne podrzava video klip!
+	</video><br><br>
+	<button onclick="play()">Play</button>
+	<button onclick="pause()">Pause</button>
+	<button type="button" onclick="makeSmall()">Mali</button>
+	<button type="button" onclick="makeNormal()">Normalni</button>
+	<button type="button" onclick="makeBig()">Veliki</button>
+	</div>
+<script>
+	var mojVideo = document.getElementById("video1");
+	function play() {
+		mojVideo.play();
+	}
+	function pause() {
+		mojVideo.pause();
+	}
+	function makeSmall() {
+		mojVideo.width = "320";
+	}
+	function makeNormal() {
+		mojVideo.width = "460";
+	}
+	function makeBig() {
+		mojVideo.width = " 660";
+	}
+</script>
+
+<iframe src="https://www.youtube.com/embed/gqcfgQq6Cq0" style="width:600px;height:400px;border:2px solid black; border-radius: 10px;"></iframe>
+<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+
+<div><svg width="600" height="400">
+	<rect x="50" y="50" rx="30" ry="30" width="300" height="200" style="fill:rgb(120, 0, 0);stroke:black;stroke-width:5;"/>Sorry, your browser does not support inline SVG.
+</svg></div>
+</body>
+</html>

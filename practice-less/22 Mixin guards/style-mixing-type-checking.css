@@ -1,0 +1,16 @@
+/* You can use type checking built-in functions to determine the value types
+ for matching mixins */
+.myclass {
+  color: blue;
+  font-size: 20px;
+}
+.myclass2 {
+  color: blue;
+  font-size: 25px;
+}
+.first {
+  width: 50%;
+}
+.second {
+  font-size: 50px;
+}

@@ -1,0 +1,12 @@
+@media screen {
+  .style,
+  .cont {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .style,
+  .cont {
+    width: 700px;
+  }
+}

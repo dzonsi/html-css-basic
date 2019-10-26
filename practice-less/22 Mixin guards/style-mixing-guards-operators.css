@@ -1,0 +1,7 @@
+/* LESS contains five guard comparison operators: <, >, <=, >= and =.
+ You can use the comparison operator (=) to compare numbers, strings,
+  identifiers, etc, and the remaining operators can be used only with numbers. */
+.myclass {
+  color: red;
+  font-size: 20px;
+}

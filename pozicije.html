@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pozicije</title>
+	<style>
+		img { border: 2px solid black; 
+		}
+		img:hover { border: 5px dotted red;
+		}
+		h1::first-letter { color: red;
+		}
+		::selection { color: mediumseagreen;
+					  background-color: yellow;
+		}
+		body { counter-reset: section;
+		}
+		h1 { counter-reset: subsection;
+		}
+		h1::before { counter-increment: section;
+					 content: "Section " counter(section) ": "
+		}
+		h2::before {counter-increment: subsection;
+					content: counter(section) "." counter(subsection) ": "}
+		.trslike { opacity: 0.4;
+		}
+		.trslike:hover { opacity: 1.0;
+		}
+		#id1 { position: fixed;
+			   bottom: 0;
+			   right: 0; 
+		}
+		#id2 { position: relative;
+			   top: -100px; 
+		}
+		#id3 { position: sticky;
+			   top: 0;
+			   background-color: rgba(0, 200, 0, 0.5);
+			   z-index: 1;
+		}
+		#id4 { position: relative;
+			   left: 150px;
+			   top: 300px; 
+		}
+		#id5 { position: sticky;
+			   top: 0;
+			   background-color: rgba(200, 0, 0, 0.5); 
+		}
+		#id6 { max-width: 100%;
+			   height: auto;
+			   opacity: 0.7;
+			   border-style: hidden;
+			   border-radius: 10px;
+		}
+		#id7 { position: relative;
+			   max-width: 732px;
+			   height: auto;
+		}
+		#id8 { position: absolute;
+			   top: 15px;
+			   left: 15px;
+			   font-size: 16px;
+		}
+		#id9 { position: absolute;
+			   top: 15px;
+			   right: 15px;
+			   font-size: 16px;
+		}
+		#id10 { position: absolute;
+			   top: 50%;
+			   left: 0;
+			   width: 100%;
+			   font-size: 16px;
+			   text-align: center;
+		}
+		#id11 { position: absolute;
+			   bottom: 15px;
+			   left: 15px;
+			   font-size: 16px;
+		}
+		#id12 { position: absolute;
+			   bottom: 15px;
+			   right: 15px;
+			   font-size: 16px;
+		}
+		.dropdown { display: inline-block;
+					position: relative;
+		}
+		.dropdown-content { display: none;
+							position: absolute;
+							min-width: 160px;
+							box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+							z-index: 1;
+							background-color: rgb(230, 230, 230);
+		}
+		.dropdown:hover .dropdown-content { display: block;
+		}
+		.desc {text-align: center;
+			   padding: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1 id="id3">Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<img class="trslike" src="gsmarena.jpg" alt="gsmarena" width="364" height="227">
+	<img id="id2" src="milan.jpg" alt="milan" width="250" height="250">
+	<img src="barcelona.jpg" alt="milan" width="250" height="250">
+	<img id="id1" src="bayern.jpg" alt="milan" width="250" height="250">
+	<img src="liverpool.jpg" alt="milan" width="250" height="250">
+	<img src="realmadrid.jpg" alt="milan" width="250" height="250">
+	<img class="trslike" src="su35.jpg" alt="milan" width="250" height="250">
+	<img class="trslike" src="mig29.jpg" alt="milan" width="250" height="250">
+	<video id="id4" width="500" height="300" controls>
+		<source src="mov_bbb.mp4" type="video/mp4">
+		Pretrazivac ne podrzava video klip!
+	</video>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1 id="id5">Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<div id="id7">
+		<img id="id6" src="gsmarena.jpg" alt="gsmarena" width="728" height="454">
+		<div id="id8">Levo gore</div>
+		<div id="id9">Desno gore</div>
+		<div id="id10">Centar</div>
+		<div id="id11">Levo dole</div>
+		<div id="id12">Desno dole</div>
+	</div>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<div class="dropdown">
+		<img src="gsmarena.jpg" alt="gsmarena" width="182" height="114">
+			<div class="dropdown-content">
+				<img src="gsmarena.jpg" alt="gsmarena" width="728" height="454">
+					<div class="desc">Slika S8+ i S9+</div>
+			</div>
+	</div>
+	<h1>Text koji se ponavlja.</h1>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h2>Manji text.</h2>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+	<h1>Text koji se ponavlja.</h1>
+
+	
+	
+</body>
+
+</html>

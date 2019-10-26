@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vezba sa &lt;form&gt; elementom:</title>
+	<style>
+
+		.naslov { text-align: center;
+		}
+		.form1 { background-color: #f2f2f2;
+				 border-radius: 5px;
+				 padding: 20px;
+		}
+		.form1 input[type=text] { width: 100%;
+								  padding: 12px 20px;
+								  margin: 8px 0px;
+								  display: inline-block;
+								  border: 1px solid #ccc;
+								  border-radius: 4px;
+								  box-sizing: border-box;
+		}
+		.form1 input[type=submit] { width: 100%;
+								  padding: 12px 20px;
+								  margin: 8px 0px;
+								  background-color: #4CAF50;
+								  color: white;
+								  border: none;
+								  border-radius: 4px;
+								  box-sizing: border-box;
+								  cursor: pointer;
+		}
+		.form1 input[type=submit]:hover { background-color: #45a049;
+		}
+		.form2 { background-color: linen;
+				 border-radius: 10px;
+				 padding: 15px;
+		}
+		.form2 input[type=radio] { background-color: rgb(150, 150, 150);
+		}
+		#label1 { color: blue;
+		}
+		#label2 { color: red;
+		}
+		#label3 { color: green;
+		}
+		.form2 input[type="submit"] { color: white;
+									  background-color: rgb(150, 150, 150);
+									  padding: 10px 15px;
+									  border: none;
+									  border-radius: 5px;
+									  margin: 5px;
+
+		}
+		.form2 input[type="radio"]:hover { cursor: pointer;
+		}
+		.form2 input[type="submit"]:hover { background-color: rgb(80, 80, 80);
+											cursor: pointer;
+		}
+		.form3 { float: left;
+		}
+		.form3 select { width: 150px;
+						background-color: rgb(210, 210, 210);
+						border: none;
+						border-radius: 4px;
+						padding: 10px;
+		}
+		.form3 input[type="submit"] { background-color: rgb(250, 10, 10);
+									  color: white;
+									  cursor: pointer;
+									  padding: 10px;
+									  border: none;
+									  border-radius: 4px;
+									  text-align: center;
+									  width: 150px;
+									  margin-top: 5px;
+		}
+		.form3 input[type="submit"]:hover { background-color: rgb(230, 40, 40);
+		}
+		#h2clear { clear: left;
+		}
+		#tx1 { width: 100%;
+			   height: 250px;
+			   background-color: rgb(235, 235, 235);
+			   border: 3px solid rgb(225, 225, 225);
+			   border-radius: 7px;
+			   padding: 15px;
+			   font-size: 20px;
+			   box-sizing: border-box;
+			   resize: none;
+
+		}
+		#in6 { background-color: rgb(250, 10, 10);
+			   color: white;
+			   cursor: pointer;
+			   padding: 10px;
+			   border: none;
+			   border-radius: 4px;
+			   text-align: center;
+			   width: 150px;
+			   margin: auto;
+			   display: block;
+		}
+		#in6:hover {background-color: rgb(230, 40, 40);
+		}
+		
+
+	</style>
+</head>
+<body>
+	<h1 class="naslov">Vezba sa &lt;form&gt; elementom:</h1>
+	<form class="form1" target="_blank">
+		<h2>Prva vrsta inputa (Text):</h2><br>
+		<label for="in1">Ime:</label><br><input id="in1" onblur="myFunction2()" type="text" name="ime" placeholder="Ime"><br>
+		<label for="in2">Prezime:</label><br><input id="in2" type="text" name="prezime" placeholder="Prezime"><br>
+		<input type="submit" value="Posalji">
+	</form>
+	<script>
+		function myFunction2() {
+		document.getElementById("in1").style.backgroundColor = "rgb(200, 200, 200)";
+		}
+	</script>
+	<form class="form2" onsubmit="myFunction1()">
+		<h2>Druga vrsta inputa (Radio):</h2><br>
+		<input id="in3" type="radio" name="boja" value="plava" checked><label id="label1" for="in3"> Plava</label><br>
+		<input id="in4" type="radio" name="boja" value="crvena"><label id="label2" for="in4"> Crvena</label><br>
+		<input id="in5" type="radio" name="boja" value="zelena"><label id="label3" for="in5"> Zelena</label><br>
+		<input type="submit" value="Posalji">
+	</form>
+	<script>
+		function myFunction1() {
+			alert("Forma je poslata!");
+		}
+	</script>
+	<form target="_blank">
+		<fieldset >
+			<legend>Omiljena boja:</legend>
+			<input type="radio" name="boja" value="plava" checked>Plava<br>
+			<input type="radio" name="boja" value="crvena">Crvena<br>
+			<input type="radio" name="boja" value="zelena">Zelena<br>
+			<input type="radio" name="boja" value="zuta">Zuta<br>
+			<input type="submit" value="Posalji">
+		</fieldset>
+	</form>
+<div>
+	<form class="form3"><h2>Padajuca lista:</h2><br>
+		<select name="automobil">
+			<option value="audi">Audi</option>
+			<option value="bmw">Bmw</option>
+			<option value="fiat">Fiat</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="opel">Opel</option>
+			<option value="pezo">Pezo</option>
+		</select><br>
+			<input type="submit" value="Posalji">
+	</form>
+	<form style="float: left;">Padajuca lista:<br>   <!--Nece da radi-->
+		<select name="automobil" size="3" >
+			<option value="audi">Audi</option>
+			<option value="bmw">Bmw</option>
+			<option value="fiat">Fiat</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="opel">Opel</option>
+			<option value="pezo">Pezo</option>
+		</select>
+			<input type="submit" value="Posalji" onclick="myFunction4()">
+	</form>
+	<p id="p2">Forma nije poslata!</p>
+	<script>
+		function myFunction4() {
+			document.getElementById("p2").innerHTML = "Forma je poslata!";   
+		}
+	</script>	<!--Nece da radi--> 
+</div><br>
+<h2 id="h2clear">Textarea vrsta forme:</h2>
+<div>
+	<form>
+		<textarea id="tx1" oninput="myFunction3()" name="poruka"></textarea>
+		<input id="in6" type="submit" value="Posalji">
+		<p id="p1"></p>
+	</form>
+	<script>
+		function myFunction3() {
+			var x = document.getElementById("tx1").value;
+			document.getElementById("p1").innerHTML = "Napisali ste: " + x;
+		}
+	</script>
+</div>
+	<form style="text-align: center;">Omiljeni pretraziva(Sa predefinisanim opcijama koje se prikazuju prilikom kucanja teksta):<br>
+		<input list="pretrazivaci">
+		<datalist id="pretrazivaci">
+			<option value="Internet Explorer">
+			<option value="Firefox">
+			<option value="Chrome">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		<input type="submit" value="Posalji">
+	</form>
+	<form>Forma tipa number,sa vrednoscu brojeva od 0 do 100,i korakom 5:<br>
+		<input type="number" name="broj" value="50" min="0" max="100" step="5">
+		<input type="submit" value="Posalji">
+	</form>
+	<form>Forma tipa range,sa vrednoscu brojeva od 0 do 100,i korakom 5:<br>0 
+		<input type="range" name="broj" value="50" min="0" max="100" step="5">100
+		<input type="submit" value="Posalji">
+	</form>
+</body>
+</html>

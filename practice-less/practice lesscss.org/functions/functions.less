@@ -1,0 +1,572 @@
+/* LOGICAL FUNCTIONS */
+/* if */
+@some: red;
+div {
+    margin: if((2 > 1), 0, 3px);
+    color:  if((iscolor(@some)), darken(@some, 10%), black);
+}
+/* ako je vrednos @some nesto drugo,nece da radi, ipak izvrsava funkciju darken*/
+
+/* boolean */
+@bg: black;
+@bg-light: boolean(luma(@bg) > 50%);
+
+div {
+	background: @bg;
+	color: if(@bg-light, black, white);
+}
+
+/* STRING FUNCTIONS */
+/* escape */
+p {
+	color: escape('a=1');
+}
+/* e (String escaping)
+@mscode: "ms:alwaysHasItsOwnSyntax.For.Stuff()"
+.class {
+	filter: e(@mscode);
+} nece da radi */
+
+/* % format
+input:
+format-a-d: %("repetitions: %a file: %d", 1 + 2, "directory/file.less");
+format-a-d-upper: %('repetitions: %A file: %D', 1 + 2, "directory/file.less");
+format-s: %("repetitions: %s file: %s", 1 + 2, "directory/file.less");
+format-s-upper: %('repetitions: %S file: %S', 1 + 2, "directory/file.less");
+
+output:
+format-a-d: "repetitions: 3 file: "directory/file.less"";
+format-a-d-upper: "repetitions: 3 file: %22directory%2Ffile.less%22";
+format-s: "repetitions: 3 file: directory/file.less";
+format-s-upper: "repetitions: 3 file: directory%2Ffile.less";
+
+*/
+
+/* replace
+input:
+replace("Hello, Mars?", "Mars\?", "Earth!");
+replace("One + one = 4", "one", "2", "gi");
+replace('This is a string.', "(string)\.$", "new $1.");
+replace(~"bar-1", '1', '2');
+
+output:
+"Hello, Earth!";
+"2 + 2 = 4";
+'This is a new string.';
+bar-2;
+
+*/
+
+/* LIST FUNCTIONS */
+/* length */
+@list: "banana", "tomato", "potato", "peach";
+.first {
+	padding: length(@list);
+	color: length(1px solid green);
+}
+/* extract */
+@list2: 2px, 5px , 15px, 30px;
+.second {
+	padding: extract(@list2, 3);
+}
+/* range */
+.third {
+	padding: range(20px, 80px, 20);
+	margin: range(5px, 20px, 5);
+}
+/* each */
+@selectors: dodgerblue, mediumseagreen, tomato;
+
+each(@selectors, {
+	.sel-@{value} {
+		padding: 4px;
+	}
+});
+
+@set: {
+	one: blue;
+	two: green;
+	three: red;
+};
+.set {
+	each(@set, {
+		@{key}-@{index}: @value;
+		});
+}
+
+each(@set, {
+	.link-@{value} {
+		color: @value;
+	}
+});
+/* setting variable names in each */
+.set-2() {
+	one: blue;
+	two: green;
+	three: red;
+}
+.set-2 {
+	each(.set-2(), .(@v, @k, @i) {
+		@{k}-@{i}: @v;
+		});
+}
+/* creating a for loop using range and each */
+each(range(4), {
+	.col-@{value} {
+		height: (@value * 50px);
+	}
+});
+
+/* MATH FUNCTION */
+/* ceil */
+.test{
+	color: ceil(3.6);
+}
+/* floor */
+.test2 {
+	color: floor(1,9);
+}
+/* percentage */
+.test3 {
+	width: percentage(0.7);
+	height: percentage(0.5);
+}
+/* round */
+.test4 {
+	width: round(1.89);
+	height: round(1.6543, 2);
+}
+/* sqrt */
+.test5 {
+	width: sqrt(400px);
+	height: sqrt(2500%);
+}
+/* abs */
+.test6 {
+	width: abs(-700px);
+	height: abs(50%);
+}
+/* sin */
+.test7 {
+	color: sin(60deg);
+	padding: sin(1); // Ako nema definisanu jedinicu onda je radijan
+}
+/* asin */
+.test8 {
+	color: asin(0.5);
+	padding: asin(1);
+}
+/* cos */
+.test9 {
+	color: cos(45deg);
+	padding: cos(0.7);
+}
+/* acos */
+.test10 {
+	color: acos(0.7);
+	padding: acos(-0.4);
+}
+/* tan */
+.test11 {
+	color: tan(1);
+	padding: tan(20deg);
+}
+/* atan */
+.test12 {
+	color: atan(1);
+	padding: round(atan(1), 5);
+}
+/* pi */
+.test13 {
+	color: pi();
+	padding: round(pi(), 5);
+}
+/* pow */
+.test14 {
+	color: pow(3, 5);
+	padding: pow(5px, 2);
+	height: pow(7%, 2);
+	width: pow(2%, -2);
+}
+/* mod */
+.test15 {
+	color: mod(27px, 5px);
+	padding: mod(11cm, 6px);
+	height: mod(-17%, 7);
+}
+/* min */
+.test16 {
+	color: min(5, 6, 9);
+	height: min(30px, 4px, 99px);
+	width: min(17%, 9%, 50%);
+}
+/* max */
+.test17 {
+	color: max(100, 200, 300);
+	padding: max(10px, 20px, 30px);
+	height: max((20px + 5px), 20px, 3px);
+}
+
+/* TYPE FUNCTION */
+/* isnumber */
+.test18 {
+	color: isnumber(10px);
+	padding: isnumber(10%);
+	color: isnumber(blue);
+	height: isnumber(#ddd);
+}
+/* isstring */
+.test19 {
+	color: isstring(10px);
+	padding: isstring("string");
+	height: isstring(dodgerblue);
+}
+/* iscolor */
+.test20 {
+	color: iscolor(navy);
+	padding: iscolor(10px);
+	height: iscolor(#ddd);
+}
+/* iskeyword */
+.test21 {
+	color: iskeyword(padding);
+	padding: iskeyword(keyword);
+	height: iskeyword(red);
+	width: iskeyword(margin);
+}
+/* isurl */
+.test22 {
+	color: isurl(blue);
+	padding: isurl(15%);
+	height: isurl(url(https://www.google.com/));
+	width: isurl("https://www.google.com/");
+}
+/* ispixel */
+.test23 {
+	color: ispixel(5%);
+	padding: ispixel(blue);
+	height: ispixel(15px);
+	width: ispixel(keyword);
+}
+/* isem */
+.test24 {
+	color: isem(25px);
+	padding: isem(15%);
+	height: isem(3em);
+	width: isem(#fff);
+}
+/* ispercentage */
+.test25 {
+	color: ispercentage(15%);
+	padding: ispercentage(blue);
+	height: ispercentage(7.8%);
+}
+/* isunit */
+.test26 {
+	color: isunit(25%, %);
+	padding: isunit(44px, em);
+	height: isunit(#fff, px);
+}
+/* isruleset */
+@rules: {
+	color: linen;
+};
+.test27 {
+	color: isruleset(@rules);
+	padding: isruleset(#fff);
+	height: isruleset(123);
+}
+
+/* MISC FUNCTIONS */
+
+/* color */
+.test28 {
+	color: color("#aaa");
+	background-color: color("linen");
+}
+/* image-size */
+.test29 {
+	padding: image-size("C:/Users/Nikola/Desktop/images/black-brick.jpg");
+}
+/* image-width */
+.test30 {
+	padding: image-width("C:/Users/Nikola/Desktop/images/black-brick.jpg");
+}
+/* image-height */
+.test31 {
+	padding: image-height("C:/Users/Nikola/Desktop/images/black-brick.jpg");
+}
+/* convert */
+.test32 {
+	color: convert(7s, "ms");
+	padding: convert(1rad, "deg");
+	height: convert(14cm, "mm");
+}
+/* data-uri ne razumem! */
+
+/* default */
+.test33(1) {x: 11}
+.test33(2) {y: 12}
+.test33(@x) when (default()) {z: @x}
+
+.test34 {
+	.test33(3);
+}
+.test35 {
+	.test33(2);
+}
+
+.test35(@value) when (ispixel(@value)) { width: @value }
+.test35(@value) when not(default()) { padding: (@value / 5) }
+
+.test36 {
+	.test35(100px);
+}
+.test37 {
+	.test35(100%); // Ne izvrsava se:)
+}
+
+.test38 {
+	.m(@x) when (default()), not(default()) {always: @x}
+	.m(@x) when (default()) and not(default()) {never: @x}
+	.m(1);
+}
+
+.test39 {
+	color: default();
+	padding: default(33);
+}
+/* unit */
+.test40 {
+	color: unit(5, px);
+	padding: unit(33%, em);
+	height: unit(33pc);
+}
+/* get-unit */
+.test41 {
+	color: get-unit(14%);
+	padding: get-unit(3em);
+}
+/* svg-gradient */
+.test41 {
+	@list: red, green 30%, blue;
+	background-image: svg-gradient(to right, @list);
+}
+
+/* COLOR DEFINITION FUNCTIONS */
+
+/* rgb */
+.test42 {
+	color: rgb(255, 0, 0);
+	background-color: rgb(0, 100%, 0);
+}
+/* rgba */
+.test43 {
+	color: rgba(255, 0, 0, 0.1);
+	background-color: rgba(0, 100%, 0, 0.5);
+}
+/* argb */
+.test44 {
+	color: argb(rgba(255, 0, 0, 0.1));
+	background-color: argb(rgba(0, 100%, 0, 0.5));
+}
+/* hsl */
+.test45 {
+	color: hsl(100, 100%, 50%);
+	background-color: hsl(200, 90%, 70%);
+}
+/* hsla */
+.test46 {
+	color: hsla(100, 100%, 50%, 0.2);
+	background-color: hsla(200, 90%, 70%, 0.4);
+}
+/* hsva */
+.test47 {
+	color: hsva(80, 100%, 50%, 0.5);
+	background-color: hsva(64, 90%, 60%, 0.9);
+}
+
+/* COLOR CHANNEL FUNCTIONS */
+/* hue */
+.test48 {
+	color: hue(hsl(1, 80%, 70%));
+	background-color: hue(hsl(300, 20%, 90%));
+}
+/* saturation */
+.test49 {
+	color: saturation(hsl(1, 80%, 70%));
+	background-color: saturation(hsl(300, 20%, 90%));
+}
+/* lightness */
+.test50 {
+	color: lightness(hsl(1, 80%, 70%));
+	background-color: lightness(hsl(300, 20%, 90%));
+}
+/* hsvhur */
+.test51 {
+	color: hsvhue(hsv(300, 100%, 30%));
+	background-color: hsvhue(hsv(20, 60%, 90%));
+}
+/* hsvsaturation */
+.test52 {
+	color: hsvsaturation(hsv(300, 100%, 30%));
+	background-color: hsvsaturation(hsv(20, 60%, 90%));
+}
+/* hsvvalue */
+.test53 {
+	color: hsvvalue(hsv(300, 100%, 30%));
+	background-color: hsvvalue(hsv(20, 60%, 90%));
+}
+/* red */
+.test54 {
+	color: red(rgb(10, 39, 20));
+	background-color: red(#f12c8d);
+	background: red(tomato);
+}
+/* green */
+.test55 {
+	color: green(rgb(10, 39, 20));
+	background-color: green(#f12c8d);
+	background: green(tomato);
+}
+/* blue */
+.test55 {
+	color: blue(rgb(10, 39, 20));
+	background-color: blue(#f12c8d);
+	background: blue(tomato);
+}
+/* alpha */
+.test56 {
+	color: alpha(rgba(12, 129, 245, 0.3));
+	background: alpha(hsla(300, 100%, 40%, 0.6));
+}
+/* luma */
+.test57 {
+	color: luma(rgba(12, 129, 245, 0.3));
+	background: luma(hsla(300, 100%, 40%, 0.6));
+}
+/* luminanace */
+.test58 {
+	color: luminance(rgba(12, 129, 245, 0.3));
+	background: luminance(hsla(300, 100%, 40%, 0.6));
+}
+
+/* COLOR OPERATION FUNCTIONS */
+
+/* saturate */
+.test59 {
+	color: saturate(hsl(120, 80%, 50%), 20%);
+	background-color: saturate(hsl(120, 80%, 50%), 20%, relative);
+}
+/* desaturate */
+.test60 {
+	color: desaturate(hsl(120, 80%, 50%), 20%);
+	background-color: desaturate(hsl(120, 80%, 50%), 20%, relative);
+}
+/* lighten */
+.test61 {
+	color: lighten(hsl(120, 80%, 50%), 20%);
+	background-color: lighten(hsl(120, 80%, 50%), 20%, relative);
+}
+/* darken */
+.test62 {
+	color: darken(hsl(120, 80%, 50%), 20%);
+	background-color: darken(hsl(120, 80%, 50%), 20%, relative);
+}
+/* hadein */
+.test63 {
+	color: fadein(hsla(90, 80%, 50%, 0.5), 20%);
+	background-color: fadein(rgba(200, 200, 200, 0.3), 30%, relative);
+}
+/* fadeout */
+.test63 {
+	color: fadeout(hsla(90, 80%, 50%, 0.5), 20%);
+	background-color: fadeout(rgba(200, 200, 200, 0.3), 30%, relative);
+}
+/* fade */
+.test64 {
+	color: fade(hsl(90, 80%, 50%), 20%);
+	background-color: fade(rgb(200, 200, 200), 30%);
+}
+/* spin */
+.test65 {
+	color: spin(hsl(10, 90%, 50%), 40%);
+	background-color: spin(hsl(10, 100%, 50%), -40%);
+	background: spin(rgb(20, 200, 201), 50%);
+}
+/* mix */
+.test66 {
+	color: mix(#ff0000, #0000ff, 50%);
+	background-color: mix(rgba(100, 50, 150, 0.4), rgba(0, 200, 75, 0.8), 50%);
+	background: mix(hsl(120, 50%, 50%), hsla(200, 90%, 80%, 0.7), 80%);
+}
+/* tint */
+.test67 {
+	color: tint(rgb(255, 0, 0), 50%);
+	background-color: tint(hsla(200, 80%, 50%, 0.7), 80%);
+	background: tint(#111, 90%);
+}
+/* shade */
+.test67 {
+	color: shade(rgb(255, 0, 0), 50%);
+	background-color: shade(hsla(200, 80%, 50%, 0.7), 80%);
+	background: shade(#111, 90%);
+}
+/* grayscale */
+.test68 {
+  color: greyscale(hsl(90, 90%, 50%));
+  background-color: greyscale(red);
+}
+/* contrast */
+.test69 {
+	color: contrast(#bbbbbb);
+	background-color: contrast(hsl(90, 100%, 50%), #000000, #ffffff, 30%);
+}
+
+/* COLOR BLENDING FUNCTIONS */
+
+/* multiply */
+.test70 {
+	color: multiply(#ff6600, #333333);
+	background-color: multiply(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* screen */
+.test71 {
+	color: screen(#ff6600, #333333);
+	background-color: screen(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* overlay */
+.test72 {
+	color: overlay(#ff6600, #333333);
+	background-color: overlay(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* softlight */
+.test73 {
+	color: softlight(#ff6600, #333333);
+	background-color: softlight(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* hardlight */
+.test74 {
+	color: hardlight(#ff6600, #333333);
+	background-color: hardlight(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* difference */
+.test75 {
+	color: difference(#ff6600, #333333);
+	background-color: difference(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* exclusion */
+.test76 {
+	color: exclusion(#ff6600, #333333);
+	background-color: exclusion(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* average */
+.test77 {
+	color: average(#ff6600, #333333);
+	background-color: average(rgb(200, 0, 0), rgb(100, 0, 0));
+}
+/* negation */
+.test78 {
+	color: negation(#ff6600, #333333);
+	background-color: negation(rgb(200, 0, 0), rgb(100, 0, 0));
+}

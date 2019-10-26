@@ -1,0 +1,103 @@
+@import "variables";
+$list: (15, 20, 25);
+p {
+	font: {
+	family: Helvetica, sans-serif;
+	size: 18px;
+	weight: bold;
+	}
+}
+h1 {
+	text: {
+		decoration: none;
+	}
+}
+@mixin important-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+.danger {
+  @include important-text;
+  background-color: green;
+  font-size: $myFont;
+}
+@mixin borderer($color, $type: solid, $width) {
+	border: $width $type $color;
+}
+.first {
+	@include borderer($myColor, solid, 3px);
+}
+@mixin transform($property) {
+	-webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.second {
+	@include transform(rotate(20deg));
+}
+.button-basic  {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.primary-button {
+	@extend .button-basic;
+	color: black;
+	background-color: linen;
+}
+.secondary-button {
+	@extend .button-basic;
+	color: white;
+	font-size: 12px;
+	background-color: black;
+}
+// functions
+.test1 {
+	text-align: unquote("center");
+	font-size: unquote(ceil(15.2) + "px");
+	width: unquote(nth($list, 3) + "px");
+}
+$map1: ("small": 12px, "normal": 18px, "large": 24px);
+.test2 {
+	line-height: map-get($map1, "normal");
+}
+.test3 {
+	color: grayscale(dodgerblue);
+}
+.test4 {
+	background-color: mix(white, black, 80%);
+}
+@mixin color($color) {
+	color: darken($color, 20%);
+}
+.test5 {
+	@include color(red);
+}
+@mixin color-with-condition($color) {
+	@if(saturation($color) > 50) {
+		background-color: white;
+		color: $color;
+	} @else {
+		background-color: black;
+		color: $color;
+	}
+}
+.test6 {
+	@include color-with-condition(dodgerblue);
+}
+.test7 {
+	@include color-with-condition(#CEC883);
+}
+.test8, .test9 {
+	text-align: left;
+	& & {
+		padding: {
+			bottom: 0;
+			left: 10px;
+		}
+	}
+}

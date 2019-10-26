@@ -1,0 +1,7 @@
+/* The @import (reference) is used to import external files but
+ it will not add imported styles to compiled CSS file. */
+p {
+  color: #A0A0A0;
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+}

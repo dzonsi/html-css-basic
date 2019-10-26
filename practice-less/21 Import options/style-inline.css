@@ -1,0 +1,9 @@
+/* The @import (inline) statement will copy your CSS into the output CSS file
+ without processing it. */
+.style {
+   font-family: "Comic Sans MS";
+   font-size: 20px;
+}
+p {
+  color: red;
+}

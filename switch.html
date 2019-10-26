@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		/* switch1 */
+		.switch {
+			width: 110px;
+			height: 50px;
+			border: 2px solid rgb(170, 170, 170);
+			border-radius: 25px;
+			position: relative;
+			transition: border 0.3s linear;
+		}
+		.switch-btn {
+			width: 40px;
+			height: 40px;
+			background-color: rgb(170, 170, 170);
+			border: none;
+			border-radius: 50%;
+			position: absolute;
+			top: 3px;
+			left: 5px;
+			transition: left 0.3s linear, background-color 0.3s linear, transform 0.3s;
+		}
+		.switch-btn-new {
+			transform: translate(56px);
+			background-color: dodgerblue;
+			transition: 0.3s all;
+		}
+		.switch-new {
+			border: 2px solid dodgerblue;
+		}
+		@keyframes first {
+			from { box-shadow: none; }
+			to { box-shadow: 0px 0px 10px 5px rgba(30, 144, 255, 0.9); }
+		}
+		.switch-btn-animation {
+			animation-name: first;
+			animation-duration: 0.3s;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		@keyframes second {
+			from { box-shadow: none; }
+			to { box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.9); }
+		}
+		.switch-btn-animation2 {
+			animation-name: second;
+			animation-duration: 0.3s;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+
+		/* switch2 */
+		.cont {
+			background-color: rgb(60, 60, 60);
+			width: 120px;
+			height: 90px;
+			margin-top: 8px;
+			position: relative;
+			border: none;
+			border-radius: 10px;
+		}
+		.switch2 {
+			width: 52px;
+			height: 24px;
+			background-color: rgba(211, 211, 211, 0.4);
+			border: none;
+			border-radius: 10px;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			transition: border 0.3s linear;
+		}
+		.switch-btn2 {
+			width: 40px;
+			height: 40px;
+			background-color: rgb(170, 170, 170);
+			border: none;
+			border-radius: 50%;
+			position: absolute;
+			top: -8px;
+			left: -10px;
+			transition: left 0.3s linear, background-color 0.3s linear, transform 0.3s;
+		}
+		.switch-btn2-new {
+			transform: translate(32px);
+			background-color: dodgerblue;
+			transition: 0.3s all;
+		}
+		.switch2-new {
+			background-color: rgba(30, 144, 255, 0.3);
+			transition: 0.3s all;
+		}
+		@keyframes third {
+			from { box-shadow: none; }
+			to { box-shadow: 0px 0px 10px 5px rgba(30, 144, 255, 0.9); }
+		}
+		.switch-btn2-animation {
+			animation-name: third;
+			animation-duration: 0.3s;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		@keyframes fourth {
+			from { box-shadow: none; }
+			to { box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.9); }
+		}
+		.switch-btn2-animation2 {
+			animation-name: fourth;
+			animation-duration: 0.3s;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		/* switch3 */
+		.cont3 {
+			background-color: black;
+			width: 120px;
+			height: 90px;
+			margin-top: 8px;
+			position: relative;
+			border: none;
+			border-radius: 10px;
+		}
+		.switch3 {
+			width: 110px;
+			height: 50px;
+			border: 1px solid rgb(130, 130, 130);
+			border-radius: 25px;
+			position: absolute;
+			top: 19px;
+			left: 5px;
+			background-color: rgb(40, 40, 40);
+		}
+		.switch-btn3 {
+			width: 40px;
+			height: 40px;
+			background-color: black;
+			border: none;
+			border-radius: 50%;
+			position: absolute;
+			top: 4px;
+			left: 5px;
+			transition: left 0.3s linear, background-color 0.3s linear, transform 0.3s;
+		}
+		.switch-click {
+			width: 20px;
+			height: 20px;
+			background-color: black;
+			border: 2px solid white;
+			border-radius: 50%;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		.switch3-new {
+			background-color: orange;
+			border-color: orange;
+		}
+		.switch-btn3-new {
+			transform: translate(58px);
+		}
+		.switch-click-new {
+			width: 4px;
+			border: none;
+			border-radius: 0;
+			background-color: white;
+			left: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="switch" class="switch" onclick="change()">
+			<div id="switch-btn" class="switch-btn"></div>
+		</div>
+	</div>
+
+	<div class="cont">
+		<div id="switch2" class="switch2" onclick="youtube()">
+			<div id="switch-btn2" class="switch-btn2"></div>
+		</div>
+	</div>
+
+	<div class="cont3">
+		<div id="switch3" class="switch3" onclick="lg()">
+			<div id="switch-btn3" class="switch-btn3">
+				<div id="switch-click" class="switch-click"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+	/*	function change() {
+			x = document.getElementById("switch");
+			y = document.getElementById("switch-btn");
+			if (y.style.left == "5px") {
+				y.style.left = "71px";
+				y.style.backgroundColor = "dodgerblue";
+				x.style.border = "2px solid dodgerblue";
+			} else {
+				y.style.left = "5px";
+				y.style.backgroundColor = "lightgrey";
+				x.style.border = " 2px solid lightgrey";
+			}
+		} */
+
+		function change() {
+			x = document.getElementById("switch");
+			y = document.getElementById("switch-btn");
+			x.classList.toggle("switch-new");
+			y.classList.toggle("switch-btn-new");
+			y.classList.toggle("switch-btn-animation");
+			if (y.classList.contains("switch-btn-animation")) {
+				y.classList.remove("switch-btn-animation2");
+			} else {
+				y.classList.add("switch-btn-animation2");
+			}
+		}
+
+		function youtube() {
+			x = document.getElementById("switch2");
+			y = document.getElementById("switch-btn2");
+			x.classList.toggle("switch2-new");
+			y.classList.toggle("switch-btn2-new");
+			y.classList.toggle("switch-btn2-animation");
+			if (y.classList.contains("switch-btn2-animation")) {
+				y.classList.remove("switch-btn2-animation2");
+			} else {
+				y.classList.add("switch-btn2-animation2");
+			}
+		}
+
+		function lg() {
+			x = document.getElementById("switch3");
+			y = document.getElementById("switch-btn3");
+			z = document.getElementById("switch-click");
+			x.classList.toggle("switch3-new");
+			y.classList.toggle("switch-btn3-new");
+			z.classList.toggle("switch-click-new");
+		}
+
+	</script>
+</body>
+</html>

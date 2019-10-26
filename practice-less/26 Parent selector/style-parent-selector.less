@@ -1,0 +1,43 @@
+/* Multiple & */
+
+.select {
+	& + & {
+		color: dodgerblue;
+	}
+
+	& & {
+		color: tomato;
+	}
+	&& {
+		color: linen;
+	}
+	&, &_class1 {
+		color: navy;
+	}
+}
+
+/* Changing selector order */
+
+.header {
+	.menu {
+		border-radius: 5px;
+		border: 1px solid red;
+		& {
+			padding-left: 200px;
+		}
+	}
+}
+
+/* Combinatorial Ecplision, The & can produce all the possible permutation
+ of selectors in a list separated by commas. */
+
+p, div {
+	color: red;
+	font-family: Lucida Console;
+	& + & {
+		color: green;
+		background-color: yellow;
+		font-family: "Comic Sans MS";
+	}
+}
+

@@ -1,0 +1,19 @@
+h1 {
+  color: #D0DC11;
+}
+.div1 {
+  background-color: #ca428b;
+  color: #D0DC11;
+}
+.div2 {
+  background-color: #ca428b;
+  color: #D0DC11;
+}
+h2 {
+  background: #2ECCFA;
+}
+.myclass {
+  background: url("http://www.tutorialspoint.com/less/images/less_variables/birds.jpg");
+  width: 800px;
+  height: 500px;
+}

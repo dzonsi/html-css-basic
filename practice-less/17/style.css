@@ -1,0 +1,42 @@
+.p1 {
+  color: dodgerblue;
+}
+.p2 {
+  background: #64d8c0;
+  color: dodgerblue;
+}
+.p3 {
+  background: mediumseagreen;
+  color: dodgerblue;
+}
+/* It is possible to create a mixin and it can be made to disappear
+ in the output by simply placing the parentheses after it. */
+.myclass {
+  background: #64d8c0;
+  padding-left: 100px;
+}
+/* The mixins can contain not just properties but they can contain selectors too. */
+a:hover {
+  background: #FFC0CB;
+}
+/* Namespaces are used to group the mixins under a common name. Using namespaces,
+ you can avoid conflict in name and encapsulate a group of mixins from outside. */
+h2 {
+  color: red;
+}
+/* When guard is applied to namespace, a mixin defined by the namespace is used
+ only when guard condition returns true. The namespace guard is similar to
+  guard on mixins. */
+h3 {
+  color: red;
+}
+/* The !important keyword is used to override the particular property. When it is
+ placed after mixin call, it marks all inherited properties as !important. */
+.para1 {
+  color: #900;
+  background-color: #F7BE81;
+}
+.para2 {
+  color: #900 !important;
+  background-color: #F7BE81 !important;
+}

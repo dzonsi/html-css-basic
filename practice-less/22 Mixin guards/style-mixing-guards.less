@@ -1,0 +1,15 @@
+.mixin (@a) when (lightness(@a) >= 50%) {
+	font-size: 14px;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+	font-size: 20px;
+}
+.mixin (@a) {
+	color: @a;
+}
+.class1 {
+	.mixin(#FF0000);
+}
+.class2 {
+	.mixin(#555);
+}

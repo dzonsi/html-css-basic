@@ -1,0 +1,44 @@
+@detached-ruleset: {
+	.mixin() {
+		font-family: "Comic Sans MS";
+		background-color: #AA86EE;
+	}
+};
+
+.cont {
+	@detached-ruleset();
+	.mixin();
+}
+// Variables and mixins are defined inside the detached ruleset.
+
+@detached-ruleset2: {
+	background-color: @caller-variable;
+	.caller-mixin();
+};
+
+.cont2 {
+	@detached-ruleset2();
+
+	@caller-variable: #AA86EE;
+	.caller-mixin() {
+		font-style: italic;
+	}
+}
+// The detached ruleset can gain access to scope by being imported into it.
+
+#id {
+	.style() {
+		@detached: { font-style: @font;};
+	}
+}
+
+.container() {
+	@font: italic;
+	#id > .style();
+}
+
+.cont3 {
+	.container();
+	@detached();
+}
+

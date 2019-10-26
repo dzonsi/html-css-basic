@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CSS Osnove</title>
+<style>
+		body { font-size:100%;
+			background-image: url("milan.jpg"), url("realmadrid.jpg"), url("liverpool.jpg"), url("barcelona.jpg"), url(bayern.jpg);
+			background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+			background-position: top right, 50% 60%, 80% 90%, 95% 50%, 70% 20%;
+			background-attachment: fixed, fixed, fixed, fixed, fixed;
+			background-size: auto, 240px 240px, 240px 240px, 240px 240px, 240px 240px;
+		}
+		h1 { font-size: 2.5em;
+		}
+		h2 { font-size: 1.875em;
+		}
+		p { font-size: 1.1em;
+		}
+		a { font-size: 1.1em;
+			text-decoration: none;
+		}
+		
+		.naslov { text-align: center;
+				background-color: rgba(100, 100, 100, 0.5);
+				max-width: 1300px;
+				border-style: solid;
+				border-width: 5px;
+				border-color: red;
+				border-radius: 15px;
+				margin:auto;
+				overflow: auto;
+
+		}
+		.prvi { background-image: linear-gradient(to right, white, rgba(150, 150, 150, 0.4)); 
+				max-width: 650px;
+				border-style: dotted;
+				border-width: 4px;
+				border-color: green;
+				border-radius: 15px;
+				padding: 10px;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				overflow: hidden;
+
+		}
+		.divlink { margin: 10px;
+				   padding: 10px;
+		}
+		a.milan:link { border-style: hidden;
+				 	   border-radius: 10px;
+				       color: red;
+					   background-color: black;
+				 	   padding: 10px;
+				 	   font-weight: bold;
+		}
+		a.milan:visited{ border:4px solid black;
+						 color: red;
+						 font-weight: bold;
+
+		}
+		a.milan:hover { color: black;
+						background-color: red;
+
+		}
+		a.milan:active { border: 4px solid black;
+		}
+		a.bayern:link { border-style: hidden;
+				 		border-radius: 10px;
+				 		color: white;
+				 		background-color: rgb(131, 20, 46);
+				 		padding: 10px;
+				 		font-weight: bold;
+		}
+		a.bayern:visited{ border:4px solid black;
+						  color: white;
+						  font-weight: bold;
+
+		}
+		a.bayern:hover { color: rgb(131, 20, 46);
+						 background-color: white;
+
+		}
+		a.bayern:active { border: 4px solid rgb(12, 42, 95);
+		}
+		a.liverpool:link { border-style: hidden;
+				 		   border-radius: 10px;
+				 		   color: rgb(240, 240, 240);
+				 		   background-color: red;
+				 		   padding: 10px;
+				 		   font-weight: bold;
+		}
+		a.liverpool:visited{ border:4px solid black;
+						    color: rgb(240, 240, 240);
+						    font-weight: bold;
+
+		}
+		a.liverpool:hover { color: red;
+						    background-color: rgb(230, 230, 230);
+
+		}
+		a.liverpool:active { border: 4px solid rgb(0, 178, 169);
+		}
+		a.barcelona:link { border-style: hidden;
+				 	   border-radius: 10px;
+				       color: #a70042;
+					   background-color: #004c99;
+				 	   padding: 10px;
+				 	   font-weight: bold;
+		}
+		a.barcelona:visited{ border:4px solid black;
+						 color: #a70042;
+						 font-weight: bold;
+
+		}
+		a.barcelona:hover { color: #004c99;
+						background-color: #a70042;
+
+		}
+		a.barcelona:active { border: 4px solid #edbc00;
+		}
+		a.realmadrid:link { border-style: hidden;
+				 	   border-radius: 10px;
+				       color: #00529F;
+					   background-color: #FEBE10;
+				 	   padding: 10px;
+				 	   font-weight: bold;
+		}
+		a.realmadrid:visited{ border:4px solid black;
+						 color: #00529F;
+						 font-weight: bold;
+
+		}
+		a.realmadrid:hover { color: #004c99;
+						background-color: white;
+
+		}
+		a.realmadrid:active { border: 4px solid #FEBE10;
+		}
+		.drugi { background-image: linear-gradient(white, rgba(150, 150, 150, 0.6));
+				 max-width: 650px;
+				 border-style: dashed;
+				 border-width: 5px;
+				 border-color: rgb(100, 100, 100);
+				 border-radius: 15px;
+				 padding: 10px;
+				 margin-bottom: 10px;
+				 overflow: auto;
+		}
+		.drugi h2 { font-weight: bold;
+				   	font-family: Arial;
+
+		}
+		.drugi p { background-image: linear-gradient(to right, rgba(102, 51, 153, 0.1), rgba(102, 51, 153, 0.4));
+				   padding: 4px;
+				   border-style: hidden;
+				   border-radius: 10px 0px 0px 10px;
+		}
+		.treci { background-color: linen;
+				 max-width: 650px;
+				 border-style: double;
+				 border-width: 5px;
+				 border-color: tomato;
+				 border-radius: 15px;
+				 padding: 10px;
+				 margin-bottom: 10px;
+				 overflow: auto;
+
+		}
+		.tabela1 table, th, td { font-size: 1.1em;
+								 border-style: solid;
+								 border-width: 3px;
+								 border-color: tomato;
+								 background-color: white;
+								 padding: 10px;
+								 text-align: center;
+				
+		}
+		.tabela1 table { border-collapse: collapse;
+						 width: 100%;
+						 
+		}
+		.tabela1 th { background-color: rgb(200, 200, 200);
+		}
+		.divlink2 { background-color: rgba(110, 110, 110, 0.8);
+					padding-left: 10px;
+					padding-bottom: 20px;
+					padding-top: 1px;
+					border-style: hidden;
+					border-radius: 15px;
+					text-transform: capitalize;
+		}
+		@media screen and (max-width: 800px) {.divlink2 a {display: inherit;
+												max-width: 150px;
+												text-align: center;
+			}
+		}
+	
+
+</style>	
+
+
+</head>
+
+<body>
+	<h1 class="naslov">CSS osnove: Backgrounds, Borders, Margins, Padding, Height, Weight...</h1>
+
+	<div class="prvi"><h2>Prikazivanje raznih opcija na nasumicnom tekstu:</h2>
+
+	<div class="divlink">	<a class="milan" href="https://www.acmilan.com/en" target="_blank">AC&nbsp;MILAN</a></div>
+	<div class="divlink">	<a class="bayern" href="https://fcbayern.com/en" target="_blank">FC&nbsp;BAYERN</a></div>
+	<div class="divlink">	<a class="liverpool" href="https://www.liverpoolfc.com/welcome-to-liverpool-fc" target="_blank">LIVERPOOL&nbsp;FC</a></div>
+	<div class="divlink">   <a class="barcelona" href="https://www.fcbarcelona.com/" target="_blank">FC&nbsp;BARCELONA</a></div>
+	<div class="divlink">   <a class="realmadrid" href="https://www.realmadrid.com/en">REAL&nbsp;MADRID</a></div>
+	</div>
+
+	<div class="drugi"><h2>Prikazivanje raznih opcija na nasumicnom tekstu:</h2>
+
+		<p>Tekst koji se ponavlja.Tekst koji se ponavlja.</p>
+		<p>Tekst koji se ponavlja.Tekst koji se ponavlja.</p>
+		<p>Tekst koji se ponavlja.Tekst koji se ponavlja.</p>
+	</div>	
+
+	<div class="treci tabela1"><h2>Prikazivanje raznih opcija na nasumicnom tekstu:</h2>
+
+		<table>
+			<tr>
+				<th>Ime</th>
+				<th>Prezime</th>
+				<th>Broj telefona</th>
+				<th>Slika</th>
+				<th>Link</th>
+			</tr>
+			<tr>
+				<td>Petar</td>
+				<td>Milenkovic</td>
+				<td>063/123456</td>
+				<td><img src="milan.jpg" alt="AC Milan" width="26" height="26"></td>
+				<td><a class="milan" href="https://www.acmilan.com/en" title="www.acmilan.com" target="_blank">AC&nbsp;MILAN</a></td>
+			</tr>
+			<tr>
+				<td>Marko</td>
+				<td>Jovanovic</td>
+				<td>064/123456</td>
+				<td><img src="liverpool.jpg" alt="Liverpool" width="26" height="26"></td>
+				<td><a class="liverpool" href="https://www.liverpoolfc.com/welcome-to-liverpool-fc" target="_blank">LIVERPOOL&nbsp;FC</a> </td>
+			</tr>
+			<tr>
+				<td>Milos</td>
+				<td>Nikolic</td>
+				<td>065/123456</td>
+				<td><img src="bayern.jpg" alt="Bayern" width="26" height="26"></td>
+				<td><a class="bayern" href="https://fcbayern.com/en" target="_blank" >FC&nbsp;BAYERN</a></td>
+			</tr>
+		</table>
+	</div>
+	<div class="divlink2"><h2>Linkovi na drugi nacin:</h2>
+		<a class="milan" href="https://www.acmilan.com/en" target="_blank">AC&nbsp;MILAN</a>
+		<a class="bayern" href="https://fcbayern.com/en" target="_blank">FC&nbsp;BAYERN</a>
+		<a class="liverpool" href="https://www.liverpoolfc.com/welcome-to-liverpool-fc" target="_blank">LIVERPOOL&nbsp;FC</a>
+		<a class="barcelona" href="https://www.fcbarcelona.com/" target="_blank">FC&nbsp;BARCELONA</a>
+		<a class="realmadrid" href="https://www.realmadrid.com/en">REAL&nbsp;MADRID</a>
+	</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+/* CEIL rounds up the number to next gighest integer. */
+p {
+  font-size: 1;
+}
+/* FLLOR rouns down th enumber to next lowest integer. */
+h1 {
+  font-size: 4;
+}
+/* PERCENTAGE transforms the floating point number tp percentage string. */
+h2 {
+  font-size: 25%;
+}
+/* ROUND rounds a floating point number */
+h3 {
+  font-size: 4;
+}
+/* SQRT returns the square root of a number. */
+h4 {
+  font-size: 5;
+}
+/*ABS provides the absolute value of a number */
+h5 {
+  font-size: 25px;
+}
+/* SIN calculates the sine value, returns radians on numbers. */
+h6 {
+  font-size: 0.8660254;
+}
+.first {
+  font-size: 0.90929743;
+}
+/* ASIN psecifies arcsine(inverse of sine) of a number which returns value
+between -pi/2 and pi/2 */
+div {
+  font-size: 1.57079633rad;
+}
+.second {
+  font-size: 1.04719754rad;
+}
+/* COS returns cosine of the specified value and determines radians on 
+numbers without units */
+.third {
+  font-size: -0.41614684;
+}
+.fourth {
+  font-size: 0.5;
+}
+/* ACOS specifies arccosine (inverse of cosine) of a number which returns value
+ between 0 and pi. */
+.fifth {
+  font-size: 0rad;
+}
+.sixth {
+  font-size: 1.04719755rad;
+}
+/* TAN specifies tangent of the number */
+.seventh {
+  font-size: 0.32004039;
+}
+/* ATAN specifes arctangent (inverse of tangent) of a specified number */
+.math1 {
+  font-size: 0.78539816rad;
+}
+/* PI returns a PI value */
+.math2 {
+  font-size: 3.14159265;
+}
+/* POW specifies the value of first argument raised to the power of second argument */
+.math3 {
+  font-size: 81;
+}
+/* MOD returns modulus of first argument with respect to the second argument. 
+It also handles negative and floating point numbers. */
+.math4 {
+  font-size: 1;
+}
+/* MIN specifies the smallest value of one or more arguments. */
+.math5 {
+  font-size: 12;
+}
+/* MAX specifies the highest value of one or more arguments. */
+.math6 {
+  font-size: 91;
+}

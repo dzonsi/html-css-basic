@@ -1,0 +1,31 @@
+// VARIABLES HOLDING PATH
+@path: "http://www.tutorialspoint.com/less";
+@import "@{path}/external1.less";
+.myclass {
+	color: #A52A2A;
+}
+// VARIABLES HOLDING PROPERTY
+@my-property: color;
+.myclass {
+	background-@{my-property}: #81F7D8;
+}
+// DEFINE THE VARIABLES WITH A VARIABLE NAME CONSISTING OF A VALUE
+.myclass2 {
+	@col: #ca428b;
+	@color: "col";
+	background-color: @@color;
+}
+// IN LAZY LOADING, VARIABLES CAN BE USED EVEN WHEN THEY ARE NOT DECLARED
+.myclass3 {
+	font-size: @a;
+	color: @color2;
+}
+@a: @b;
+@b: 25px;
+@color2: dodgerblue;
+// Default variable has an ability to set a variable only when it is not already set.
+@import "lib.less";
+@color: mediumseagreen;
+.myclass4 {
+	color: @color;
+}

@@ -1,0 +1,522 @@
+/* Nested rules */
+.container{
+   h1{
+      font-size: 25px;
+      color:#E45456;
+   }
+
+   p{
+      font-size: 25px;
+      color:#3C7949;
+   }
+
+   .box{
+      h1{
+         font-size: 25px;
+         color:#E45456;
+      }
+
+      p{
+         font-size: 25px;
+         color:#3C7949;
+      }
+   }
+}
+/* Referencing Parent Selectors */
+a {
+   font-size: 20px;
+   &:hover { background-color: yellow; }
+}
+.test1 {
+	.test2 {
+		&:hover {
+			border: 2px solid grey;
+		}
+	}
+}
+/* Nested Properties */
+.test3 {
+	font: {
+		family: Lucida Sans Unicode;
+		size: 20px;
+		weight: bold;
+		variant: small-caps;
+	}
+}
+.test4 {
+	margin: {
+		top: 10px;
+		bottom: 20px;
+		left: 30px;
+		right: 40px;
+	}
+}
+.test5 {
+	border: {
+		color: green;
+		width: 10px;
+		radius: 5px;
+		style: dotted;
+	}
+}
+/* Placeholder Selectors */
+.test6 {
+	color: green;
+}
+.test7 {
+	padding: 10px;
+	@extend .test6;
+}
+%test8 {
+	color: dodgerblue;
+	background-color: #f1f1f1;
+}
+.test9 {
+	font-size: 25px;
+	@extend %test8;
+	a {
+		@extend .test6;
+	}
+}
+/* Comments */
+/* Multiline comments are preserved in CSS output */
+// Singleline comments are not preserved in CSS output
+
+/* Interpolation in Multiline Comments */
+$var: test;
+/* Display var value in comment: #{$var} */
+
+/* Interactive Shell */
+
+/* Variables */
+$txtColor: #f1f1f1;
+$fontSize: 20px;
+$padding: 10px;
+
+.test10 {
+	color: $txtColor;
+	padding: $padding;
+	margin: $padding / 2;
+	font-size: $fontSize;
+	line-height: $fontSize * 1.5;
+}
+
+$pictureUrl: "images/black-brick.jpg";
+.test11 {
+	background-image: url($pictureUrl);
+}
+
+/* Data Types */
+
+/* Strings */
+$name: "test12";
+
+p.#{$name} {
+	color: blue;
+	a.#{$name} {
+		padding: 10px;
+	}
+}
+
+/* Operations */
+/* Number operations */
+$size: 25px;
+.test13 {
+	a {
+		font-size: $size + 5;
+	}
+	p {
+		font-size: $size / 5;
+	}
+	h1 {
+		font-size: $size * 2;
+	}
+	h2 {
+		font-size: $size - 10;
+	}
+}
+/* Color Operations */
+$color1: #333399;
+$color2: #CC3399;
+/*.test14 {
+	color: $color1 + $color2;
+} njima radi meni nece */
+
+/* String Operations */
+.test15 {
+	font-size: 4px + 10px;
+	float: le + ft;
+	display: blo + ck;
+}
+
+/* Boolean Operations */
+$age: 20;
+.test16 {
+	@if ($age > 10 and $age < 25) {
+		color: green;
+	}
+}
+
+.test17 {
+	@if (($age / 2) < 4 or ($age * 2) > 30) {
+		color: red;
+	}
+}
+.test18 {
+	@if ($age + 2 == 22) {
+		color: navy;
+	}
+}
+
+/* Parantheses */
+.test19 {
+	font-size: 10px + (6px * 2);
+	line-height: (15px * 2) + 4px;
+}
+
+/* Functions */
+.test20 {
+	color: hsl(290,60%,70%);
+	background-color: hsl(121,50%,80%);
+}
+
+/* Interpolation */
+.test21:after {
+	content: "I have #{8 + 2} books on SASS!";
+}
+$test1: hello;
+$test2: "hello";
+.test22:after {
+	content: "I have #{$test1} books on SASS!";
+}
+.test23:after {
+	content: "I have #{$test2} books on SASS!";
+}
+
+/* & in Sass Script */
+.test24 {
+	&:hover {
+		color: green;
+	}
+}
+
+/* Variable Defaults !proveriti!*/
+$myvall: null;
+$myvall: "Sass" !default;
+
+.test25:before {
+	content: $myvall;
+}
+$myvall: "nikola" !default;
+.test26:before {
+	content: $myvall;
+}
+
+/* Import Directives */
+.test27 {
+	@import "example";
+}
+
+@import "partial";
+
+/* @media directives */
+
+.test28 {
+	width: 900px;
+
+	@media screen and (orientation: portrait) {
+		width: 500px;
+		margin-left: 120px;
+	}
+}
+
+/* Extend Directives */
+/* Multiple extends */
+.test29 {
+	color: red;
+}
+.test30 {
+	margin: 20px;
+}
+.test31 {
+	@extend .test29;
+	@extend .test30;
+}
+/* Chaining extends */
+.test32 {
+	color: red;
+}
+.test33 {
+	padding: 10px;
+	@extend .test32;
+}
+.test34 {
+	@extend .test33;
+}
+/* Selector sequences */
+.test35 {
+	font-size: 24px;
+}
+h3 .test36 {
+	@extend .test35;
+}
+/* Merging selector sequences */
+.test37 .test38 h4 {
+	color: red;
+}
+#test .test39 {
+	@extend h4;
+}
+/* @extend only selectors */
+.test40 %extreme {
+	font-size: 20px;
+}
+.test41 {
+	@extend %extreme;
+}
+/* The !optional flag */
+.test42 {
+	color: grey;
+	@extend .test43 !optional;
+}
+/* @extend in directives */
+@media print {
+	.test44 {
+		font-size: 30px;
+	}
+}
+.test45 {
+	@extend .test44;
+	color: red;
+}
+
+.test46 {
+	@media screen and (min-width: 500pc) {
+		color: red;
+		.test48 {
+			padding: 4px;
+		}
+	}
+}
+.test47 {
+	@extend .test48;
+}
+/* @at-root */
+@media print {
+	.test49 {
+		height: 10px;
+		@at-root (without: media) {
+			color: red;
+		}
+		.test50 {
+			color: blue;
+		}
+	}
+}
+
+.test51 {
+	color: grey;
+	background-color: black;
+
+	@at-root {
+		.test52 {
+			font-size: 20px;
+			font-style: bold;
+		}
+	}
+}
+/* Debug Directives */
+
+/* Warn Directives */
+
+/* Error Directives */
+
+/* Control Directives & Expressions */
+/* if() */
+.test53 {
+	color: if( 1 + 1 == 2 , green, red);
+	background-color: if( 1 + 1 > 3, green, red);
+}
+$pad: 10px;
+.test54 {
+	padding: if( $pad > 15px, 15px, 8px);
+	margin: if($pad < 15px, 5px, 10px);
+}
+$col: red;
+.test55 {
+	color: if( $col == red, tomato, dodgerblue);
+	background-color: if( $col != red, blue, tomato );
+}
+/* @if & @else & @else if */
+.test56 {
+	@if 10 + 10 == 20 { border: 1px solid lightgrey; }
+	@if 7 < 2 { border: 2px dotted linen; }
+	@if null { border: 5px solid black }
+	@if 5 { display: block; }
+	@if $col { margin: 10px; }
+}
+.test57 {
+	@if $col == blue { color: navy; }
+	@if $pad * 5 > 30px { padding: 15px; }
+}
+.test58 {
+	@if $col == navy {
+		padding: 10px;
+	} @else if $col == grey {
+		padding: 20px;
+	} @else {
+		padding: 30px;
+	}
+}
+
+/* @for Directive */
+/* @for through */
+@for $i from 1 through 4 {
+	.test6#{$i} { padding-left: $i * 10px; }
+}
+@for $i from 5 through 8 {
+	.test6#{$i} {
+		padding-left: $i / 2 * 10px;
+	}
+}
+/* @for to (ne ukljucuje drugi broj)*/
+@for $i from 1 to 5 {
+	.test7#{$i} { margin: $i * 5px; }
+}
+@for $i from 6 to 9 {
+	.test7#{$i} { margin-top: $i / 4 * 5px; }
+}
+/* @each Directive */
+/* @each */
+@each $color in red, green, blue, yellow {
+	.test79-button-#{$color} {
+		color: white;
+		background-color: #{$color};
+	}
+}
+/* @each multiple assignment */
+@each $size, $style, $color in (1px, solid, red) (5px, dotted, blue)
+ (10px, dashed, grey) {
+ 	.test80-#{$color} {
+ 		background-color: $color;
+ 		border: $size $style $color;
+ 	}
+}
+
+@each $col, $backcol in (white, black) (linen, tomato) (grey, navy) {
+	.test81-#{$backcol} {
+		color: $col;
+		background-color: $backcol;
+	}
+}
+
+/* @each multiple assignment with maps */
+@each $header, $color in (h1: red, h2: green, h3: blue) {
+	.test82-#{$header} {
+		color: $color;
+	}
+}
+
+/* @while directive */
+$i: 50;
+@while $i > 0 {
+	.test83-#{$i} { padding-left: 1px * $i; }
+	$i: $i - 10;
+}
+
+/* Mixin Directives */
+/* Defane a Mixin */
+/* Include a Mixin */
+@mixin style {
+	.cont {
+		color: red;
+	}
+}
+@include style;
+.test84 {
+	@include style;
+}
+.test85 {
+	font-size: 20px;
+	@include style;
+}
+@mixin first {
+	color: white;
+	background-color: black;
+}
+.test86 {
+	@include first;
+}
+.test87 {
+	padding-left: 20px;
+	@include first;
+}
+/* Arguments */
+@mixin bordered($width: 2px) {
+	background-color: #77C1EF;
+	border: $width solid black;
+	width: 450px;
+}
+.test88 {
+	@include bordered(5px);
+}
+.test89 {
+	@include bordered;
+}
+
+/* Passing Content Block to a Mixin */
+@mixin element {
+   @content;
+}
+
+@include element {
+   .block {
+      color: green;
+   }
+}
+@include element {
+	.test90 {
+		padding-left: 10px;
+	}
+}
+
+/* Functions Directives */
+$first-width: 5px;
+$second-width: 10px;
+@function adjust-width($n) {
+	@return $n * $first-width + ($n - 1) * $second-width;
+}
+.test91 {
+	padding-left: adjust-width(4);
+	margin-left: adjust-width(6);
+}
+
+@function height ($x) {
+	@return $x * 100px;
+}
+.test92 {
+	height: height(3);
+}
+
+@function color ($color) {
+	@if ($color == red) {
+		@return blue;
+	} @else {
+		@return dodgerblue;
+	}
+}
+$primary: red;
+.test93 {
+	background-color: color($primary);
+}
+.test94 {
+	background-color: color(navy);
+}
+
+/* SASS Output Style */
+/* :nested (default)
+   :expanded
+   :compact
+   :compressed
+   sass --watch style.scss:style.css --style compressed
+    */

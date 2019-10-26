@@ -1,0 +1,52 @@
+/* hue In HSL color space, the hue channel is extracted off the color object. */
+.color1 {
+  background: 75;
+}
+/* saturation In HSL color space, the saturation channel is extracted
+ off the color object. */
+.color2 {
+  background: 90%;
+}
+/* lightness In HSL color space, the lightness channel is extracted
+ off the color object. */
+.color3 {
+  background: 30%;
+}
+/* hsvhue In HSV color space, the hue channel is extracted off the color object.*/
+.color4 {
+  background: 75;
+}
+/*hsvsaturation In HSL color space, the saturation channel is extracted
+ off the color object.*/
+.color5 {
+  background: 90%;
+}
+/* hsvalue In HSL color space, the value channel is extracted
+ off the color object. */
+.color6 {
+  background: 30%;
+}
+/* red the red channel is extracted off the rgb color object */
+.color7 {
+  background: 5;
+}
+/* green the gren channel is extracted off the rgb color object */
+.color8 {
+  background: 15;
+}
+/* blue the blue channel is extracted off the rgb color object */
+.color9 {
+  background: 25;
+}
+/* alpha the alpha channel is extracted off the rgba color object */
+.color10 {
+  background: 0.5;
+}
+/* luma, luma value is calculated off a rgb color object */
+.color11 {
+  background: 71.2513323%;
+}
+/* luminance the luma value is claculated without gamma correction */
+.color12 {
+  background: 78.53333333%;
+}

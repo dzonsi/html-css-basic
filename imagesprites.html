@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Sprites</title>
+	<style>
+		.klasa1 { position: relative;
+		}
+		.klasa1 li { margin: 0;
+					 padding: 0;
+					 position: absolute;
+					 top: 0;
+		}
+		.klasa1 li, .klasa1 a { display: block;
+								height: 44px;
+		}
+		.home { left: 0;
+				width: 46px;
+				background: url("img_navsprites_hover.gif") 0 0;
+		}
+		.back { left: 52px;
+				width: 43px;
+				background: url("img_navsprites_hover.gif") -47px 0;
+		}
+		.forward { left: 104px;
+				  width: 43px;
+				  background: url("img_navsprites_hover.gif") -91px 0;
+		}
+		.home:hover { left: 0;
+					  width: 46px;
+					  background: url("img_navsprites_hover.gif") 0 -45px;
+		}
+		.back:hover { left: 52px;
+					  width: 43px;
+					  background: url("img_navsprites_hover.gif") -47px -45px;
+		}
+		.forward:hover { left: 104px;
+					  width: 43px;
+					  background: url("img_navsprites_hover.gif") -91px -45px;
+		}
+		.klasa2 { position: absolute;
+				  top: 100px;
+		}
+		.klasa2 a { display: block;
+				    text-decoration: none;
+				    padding: 8px;
+		}
+		.klasa2 a[target] { background-color: rgba(230, 230, 230, 0.5);
+		}
+		.klasa2 a[target="_blank"] { border: 1px solid black;
+		}
+		.klasa2 a[title~="site"] { color: mediumseagreen;
+		}
+		.klasa2:hover a[class|="test"] { color: red;
+		}
+		.klasa2:hover a[class^="test"] { background-color: rgba(255, 0, 0, 0.3);
+		}
+		.klasa2 a[class$="test"] { padding: 16px;
+		}
+		.klasa2 a[class*="sto"] { outline: 3px solid black;
+		}
+		.klasa3 { position: absolute;
+				  left: 400px;
+				  top: 200px;
+				  border: 4px solid red;
+				  border-radius: 5px;
+		}
+		.klasa3 h1 {border: 2px solid black;
+					border-radius: 5px;
+				    padding: 6px;
+				    margin: 16px;
+				    background-color: linen;
+				    outline: 16px solid green;
+				    outline-offset: 0;
+		}
+		.klasa4 { position: absolute;
+				  left: 400px;
+				  top: 400px;
+				  font-size: 30px;
+				  background-color: linen;
+				  padding: 10px;
+				  border-bottom: 5px solid linen;
+				  outline: 5px solid red;
+
+		}
+		.klasa4:hover { border-bottom: 5px solid black;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<ul class="klasa1">
+		<li class="home"><a href="https://www.acmilan.com/en" target="_blank"></a></li>
+		<li class="back"><a href="https://fcbayern.com/en" target="_blank"></a></li>
+		<li class="forward"><a href="https://www.liverpoolfc.com/" target="_blank"></a></li>
+	</ul>
+
+	<div class="klasa2">
+
+
+	<a class="test" href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a class="test-1" href="https://www.acmilan.com/en">MILAN</a>
+	<a class="test-2" href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a class="testovi" href="https://www.acmilan.com/en" target="_blank" title="Link za site">MILAN</a>
+	<a class="testo" href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a class="test sa linkovima" href="https://www.acmilan.com/en">MILAN</a>
+	<a class="atributi i test" href="https://www.acmilan.com/en" title="Link za site">MILAN</a>
+	<a class="novi-test" href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a class="test" href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a class="samo test"href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a href="https://www.acmilan.com/en">MILAN</a>
+	<a href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a href="https://www.acmilan.com/en" title="Link za site">MILAN</a>
+	<a href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a href="https://www.acmilan.com/en">MILAN</a>
+	<a href="https://www.acmilan.com/en" target="_blank">MILAN</a>
+	<a href="https://www.acmilan.com/en">MILAN</a>
+	<a href="https://www.acmilan.com/en" target="_blank" title="Link za site">MILAN</a>
+
+	</div>
+
+	<div class="klasa3"><h1>Nasumican text za probu!</h1></div>
+
+	<div class="klasa4">Text za probu!</div>
+		
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+/* MERGE COMMA adds property value to the very end,stavlja zarez */
+.myfunc() {
+	box-shadow+: 5px 5px 5px grey;
+}
+.class {
+	.myfunc();
+	box-shadow+: 0 0 5px #f78781;
+}
+
+/* MERGE SPACE feature adds property value with space,ostavlja prazan razmak */
+
+.mixin() {
+	transform+_: scale(1);
+}
+
+.class2 {
+	.mixin();
+	transform+_: rotate(2deg);
+}

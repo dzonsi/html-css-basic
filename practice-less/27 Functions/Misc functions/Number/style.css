@@ -1,0 +1,9 @@
+/* A number is converted from one unit to another. It consists two arguments;
+ first argument passes number along with unit and second argument contain units.
+  The number is converted when the unit is compatible.
+   If the first argument is unchanged then the unit is not compatible. */
+body {
+  meter: 100mm;
+  time: 3000ms;
+  no-unit: 5;
+}

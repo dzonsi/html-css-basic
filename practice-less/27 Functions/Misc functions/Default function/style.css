@@ -1,0 +1,10 @@
+/* The Default function returns true only when it is available inside the guard
+ condition and does not match with any other mixin otherwise it returns false.
+  It interprets as regular css when the default function is used outside
+  the mixin guard condition. */
+div {
+  d: 12;
+}
+div.style {
+  c: 15;
+}

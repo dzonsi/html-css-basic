@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Flexbox3!</title>
+
+	<style>
+		* { box-sizing: border-box;
+		}
+		body { margin: 0;
+		}
+		.header { text-align: center;
+			      background-color: #1abc9c;
+			      color: white;
+			      margin-top: 0;
+			      padding: 50px;
+		}
+		.header > h1 { font-size: 40px;
+		}
+		.header > p { font-size: 20px;
+		}
+		.nav { display: flex;
+			   background-color: black;
+			   flex-wrap: wrap;
+		}
+		.nav > a { color: #1abc9c;
+				   text-decoration: none;
+				   padding: 10px;
+				   font-size: 20px;
+				   text-align: center;
+				   width: 100px;
+				   transition: background-color .3s, color .3s;
+		}
+		.nav > a:hover { color: white;
+				         background-color: rgb(100, 100, 100);
+		}
+		@media (max-width: 800px) { .nav { flex-direction: column;
+
+			}
+		}
+		@media (max-width: 800px) { .nav > a { width: 100%;
+
+			}
+		}
+		.flex-container { display: flex;
+						  flex-wrap: wrap;
+		}
+		.side-left { flex: 30%;
+					 max-width: 30%;
+					 background-color: rgb(230, 230, 230);
+					 padding: 20px;
+		}
+		.fakeimage { background-color: rgb(140, 140, 140);
+					 height: 200px;
+					 width: 100%;
+					 padding: 20px;
+					 border-radius: 10px;
+		}
+		.fakeimage2 { background-color: rgb(140, 140, 140);
+					 height: 80px;
+					 width: 100%;
+					 padding: 20px;
+					 border-radius: 10px;
+					 margin-bottom: 10px;
+		}
+		.main { flex: 40%;
+				padding: 20px;
+				max-width: 40%;
+		}
+		.side-right { flex: 30%;
+					  flex-wrap: wrap;
+					  max-width: 30%;
+		}
+		.side-right > img { width: 100%;
+						    padding: 5px;
+							border-radius: 10px;
+		}
+		@media (max-width: 1300px) { .side-left, .main { flex:50%;
+														 max-width: 50%;
+			}
+									 .side-right { flex: 100%;
+						  						   max-width: 100%;
+			}
+
+		}
+		@media (max-width: 800px) { .nav, .flex-container { flex-direction: column;
+			}
+			 						.side-left, .main { flex: 100%;
+														max-width: 100%;
+			}
+		}
+		
+
+		
+		
+
+	</style>
+
+</head>
+
+	<div class="header">
+		<h1>My website!</h1>
+		<p>Whit a <b>flexible</b> layout.</p>
+	</div>
+	<div class="nav">
+		<a href="">Link1</a>
+		<a href="">Link2</a>
+		<a href="">Link3</a>
+		<a href="">Link4</a>
+		<a href="">Link5</a>
+		<a href="">Link6</a>
+		<a href="">Link7</a>
+	</div>
+	<div class="flex-container">
+		<div class="side-left">
+			<h2>About me:</h2>
+			<h5>Photo of me:</h5>
+			<div class="fakeimage">Image</div>
+			<p>Same text about me...</p>
+			<h3>More text...</h3>
+			<p>Same text about me...</p>
+			<div class="fakeimage2">Image</div>
+			<div class="fakeimage2">Image</div>
+			<div class="fakeimage2">Image</div>
+		</div>
+		<div class="main">
+			<h2>Main Content</h2>
+			<h5>Description...13.11.2018.</h5>
+			<div class="fakeimage">Image</div>
+			<p>Same text...</p>
+			<p>Same text and same numbers 1, 2, 3...</p>
+			<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit.</p>
+			<h2>Main Content</h2>
+			<h5>Description...13.11.2018.</h5>
+			<div class="fakeimage">Image</div>
+			<p>Same text...</p>
+			<p>Same text and same numbers 1, 2, 3...</p>
+			<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit.</p>
+		</div>
+		<div class="side-right">
+			<img src="gsmarena.jpg" alt="gsmarena">
+			<img src="su35.jpg" alt="su35">
+			<img src="mig29.jpg" alt="MiG29">
+			<img src="pitch.jpg" alt="pitch">
+			<img src="su35400.jpg" alt="su35">
+		</div>
+		
+	</div>
+
+<body>
+	
+
+</body>
+
+</html>

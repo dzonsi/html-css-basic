@@ -1,0 +1,20 @@
+.style.nav,
+.nav h3 {
+	color: orange;
+}
+.nav {
+	&:hover {
+		color: green;
+	}
+}
+.container:extend(.nav all) {}
+/* The @{variable} symbol is used as part of the variable name,
+ id and class name. Extend does not have the ability to match selector
+ with variables. Extend can be connected to the interpolated selector. */
+
+.first {
+	color: #BF70A5;
+	font-style: italic;
+}
+@{variable}:extend(.first) {}
+@variable: .style2;// nece da radi!

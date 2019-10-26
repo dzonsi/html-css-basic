@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Flexbox!</title>
+
+	<style>
+		.flex-container { display: flex;
+						  background-color: dodgerblue;
+		}
+		.flex-container > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+		}
+		.flex-container2 { display: flex;
+						  background-color: dodgerblue;
+						  flex-direction: column;
+						  margin-top: 20px;
+		}
+		.flex-container2 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container3 { display: flex;
+						  background-color: dodgerblue;
+						  flex-direction: column-reverse;
+						  margin-top: 20px;
+		}
+		.flex-container3 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container4 { display: flex;
+						  background-color: dodgerblue;
+						  flex-direction: row-reverse;
+						  margin-top: 20px;
+		}
+		.flex-container4 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container5 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  margin-top: 20px;
+		}
+		.flex-container5 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container6 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: nowrap;
+						  margin-top: 20px;
+		}
+		.flex-container6 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container7 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap-reverse;
+						  margin-top: 20px;
+		}
+		.flex-container7 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container8 { display: flex;
+						  background-color: dodgerblue;
+						  justify-content: center;
+						  margin-top: 20px;
+		}
+		.flex-container8 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container9 { display: flex;
+						  background-color: dodgerblue;
+						  justify-content: flex-start;
+						  margin-top: 20px;
+		}
+		.flex-container9 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container10 { display: flex;
+						  background-color: dodgerblue;
+						  justify-content: flex-end;
+						  margin-top: 20px;
+		}
+		.flex-container10 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container11 { display: flex;
+						  background-color: dodgerblue;
+						  justify-content: space-between;
+						  margin-top: 20px;
+		}
+		.flex-container11 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container12 { display: flex;
+						  background-color: dodgerblue;
+						  justify-content: space-around;
+						  margin-top: 20px;
+		}
+		.flex-container12 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container13 { display: flex;
+						  background-color: dodgerblue;
+						  justify-content: space-around;
+						  flex-wrap: wrap;
+						  margin-top: 20px;
+		}
+		.flex-container13 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container14 { display: flex;
+						  background-color: dodgerblue;
+						  align-items: center;
+						  margin-top: 20px;
+						  height: 200px;
+		}
+		.flex-container14 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container15 { display: flex;
+						  background-color: dodgerblue;
+						  align-items: flex-start;
+						  margin-top: 20px;
+						  height: 200px;
+		}
+		.flex-container15 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container16 { display: flex;
+						  background-color: dodgerblue;
+						  align-items: flex-end;
+						  margin-top: 20px;
+						  height: 200px;
+		}
+		.flex-container16 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container17 { display: flex;
+						  background-color: dodgerblue;
+						  align-items: stretch;
+						  margin-top: 20px;
+						  height: 200px;
+		}
+		.flex-container17 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container18 { display: flex;
+						  background-color: dodgerblue;
+						  align-items: baseline;
+						  margin-top: 20px;
+						  height: 200px;
+		}
+		.flex-container18 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container19 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  align-content: space-between;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container19 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container20 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  align-content: space-around;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container20 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container21 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  align-content: stretch;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container21 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container22 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  align-content: center;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container22 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container23 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  align-content: flex-start;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container23 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container24 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  align-content: flex-end;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container24 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container25 { display: flex;
+						  background-color: dodgerblue;
+						  flex-wrap: wrap;
+						  justify-content: center;
+						  align-items: center;
+						  margin-top: 20px;
+						  height: 600px;
+		}
+		.flex-container25 > div { background-color: #f1f1f1;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-container26 { display: flex;
+						  background-color: #f1f1f1;
+						  flex-wrap: wrap;
+						  margin-top: 20px;
+		}
+		.flex-container26 > div { background-color: dodgerblue;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								width: 100px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.order1 { order: 1;
+		}
+		.order2 { order: 2;
+		}
+		.order3 { order: 3;
+		}
+		.order4 { order: 4;
+		}
+		.order5 { order: 5;
+		}
+		.flex-container27 { display: flex;
+						  background-color: #f1f1f1;
+						  margin-top: 20px;
+		}
+		.flex-container27 > div { background-color: dodgerblue;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								text-align: center;
+  								line-height: 75px;
+		}
+		.flex-grow1 {flex-grow: 1;
+		}
+		.flex-grow2 {flex-grow: 2;
+		}
+		.flex-grow3 {flex-grow: 1;
+		}
+		.flex-grow4 {flex-grow: 2.5;
+		}
+		.flex-grow5 {flex-grow: 1.5;
+		}
+		.flex-container28 { display: flex;
+						  background-color: #f1f1f1;
+						  margin-top: 20px;
+		}
+		.flex-container28 > div { background-color: dodgerblue;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								text-align: center;
+  								line-height: 75px;
+  								width: 100px;
+		}
+		.flex-shrink { flex-shrink: 0;
+		}
+		.flex-container29 { display: flex;
+						  background-color: #f1f1f1;
+						  margin-top: 20px;
+		}
+		.flex-container29 > div { background-color: dodgerblue;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								text-align: center;
+  								line-height: 75px;
+  								width: 100px;
+		}
+		.flex-basis { flex-basis: 200px;
+		}
+		.flex-container30 { display: flex;
+						  background-color: #f1f1f1;
+						  margin-top: 20px;
+		}
+		.flex-container30 > div { background-color: dodgerblue;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								text-align: center;
+  								line-height: 75px;
+  								width: 100px;
+		}
+		.flex { flex: 0 0 300px;
+		}
+		.flex-container31 { display: flex;
+						  background-color: #f1f1f1;
+						  margin-top: 20px;
+						  height: 250px;
+		}
+		.flex-container31 > div { background-color: dodgerblue;
+  								margin: 10px;
+  								padding: 20px;
+  								font-size: 30px;
+  								text-align: center;
+  								line-height: 75px;
+  								width: 100px;
+		}
+		.align-self { align-self: center;
+		}
+		.align-self-start { align-self: flex-start;
+		}
+		.align-self-end { align-self: flex-end;
+		}
+		
+
+
+	</style>
+
+</head>
+
+<body>
+	<h1>display: flex</h1>
+	<div class="flex-container">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>  
+	</div>
+	<h1>flex-direction: column</h1>
+	<div class="flex-container2">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>  
+	</div>
+	<h1>flex-direction: column-reverse</h1>
+	<div class="flex-container3">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>  
+	</div>
+	<h1>flex-direction: row-reverse</h1>
+	<div class="flex-container4">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>  
+	</div>
+	<h1>flex-wrap: wrap</h1>
+	<div class="flex-container5">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div>  
+	</div>
+	<h1>flex-wrap: nowrap</h1>
+	<div class="flex-container6">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>flex-wrap: wrap-reverse</h1>
+	<div class="flex-container7">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>justify-content: center</h1>
+	<div class="flex-container8">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>justify-content: flex-start</h1>
+	<div class="flex-container9">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>justify-content: flex-end</h1>
+	<div class="flex-container10">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>justify-content: space-between</h1>
+	<div class="flex-container11">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>justify-content: space-around</h1>
+	<div class="flex-container12">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>justify-content: space-around and flex-wrap: wrap</h1>
+	<div class="flex-container13">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>align-items: center</h1>
+	<div class="flex-container14">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>align-items: flex-start</h1>
+	<div class="flex-container15">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1> align-items: flex-end</h1>
+	<div class="flex-container16">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>align-items: stretch</h1>
+	<div class="flex-container17">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>align-items: baseline</h1>
+	<div class="flex-container18">
+  		<div>1</div>
+  		<div><h1>2</h1></div>
+  		<div><h2>3</h2></div>
+  		<div><h3>4</h3></div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+	</div>
+	<h1>align-content: space-between</h1>
+	<div class="flex-container19">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>align-content: space-around</h1>
+	<div class="flex-container20">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>align-content: stretch</h1>
+	<div class="flex-container21">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1> align-content: center</h1>
+	<div class="flex-container22">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>align-content: flex-start</h1>
+	<div class="flex-container23">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>align-content: flex-end</h1>
+	<div class="flex-container24">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div> 
+	</div>
+	<h1>Perfect centering: justify-contnet: center; and align-items: center;</h1>
+	<div class="flex-container25">
+  		<div>1</div> 
+	</div>
+	<h1>child elements: order;</h1>
+	<div class="flex-container26">
+  		<div class="order4">1</div>
+  		<div class="order3">2</div>
+  		<div class="order5">3</div>
+  		<div class="order2">4</div>
+  		<div class="order1">5</div>
+	</div>
+	<h1>child elements: flex-grow;</h1>
+	<div class="flex-container27">
+  		<div class="flex-grow1">1</div>
+  		<div class="flex-grow2">2</div>
+  		<div class="flex-grow3">1</div>
+  		<div class="flex-grow4">2.5</div>
+  		<div class="flex-grow5">1.5</div>
+	</div>
+	<h1>child elements: flex-shrink;</h1>
+	<div class="flex-container28">
+  		<div>1</div>
+  		<div>2</div>
+  		<div class="flex-shrink">3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div class="flex-shrink">7</div>
+  		<div>8</div>
+  		<div>9</div>
+  		<div>10</div>
+  		<div>11</div>
+	</div>
+	<h1>child elements: flex-basis;</h1>
+	<div class="flex-container29">
+  		<div>1</div>
+  		<div>2</div>
+  		<div class="flex-basis">3</div>
+  		<div>4</div>
+  		<div>5</div>
+	</div>
+	<h1>child elements: flex; is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.</h1>
+	<div class="flex-container30">
+  		<div>1</div>
+  		<div>2</div>
+  		<div class="flex">3</div>
+  		<div>4</div>
+  		<div>5</div>
+	</div>
+	<h1>child elements: align-self;</h1>
+	<div class="flex-container31">
+  		<div class="align-self-start">1</div>
+  		<div>2</div>
+  		<div class="align-self">3</div>
+  		<div>4</div>
+  		<div class="align-self-end">5</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+</body>
+
+</html>

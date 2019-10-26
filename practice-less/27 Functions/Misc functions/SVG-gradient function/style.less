@@ -1,0 +1,13 @@
+/* The svg-gradient is a transition of one color to another. */
+
+.style {
+	@style: orange, green 30%, dodgerblue;
+	background-image: svg-gradient(ellipse, @style);
+	height: 300px;
+}
+
+.style2 {
+	height: 300px;
+	@style2: white, grey 40%, black;
+	background-image: svg-gradient(to bottom right, @style2);
+}

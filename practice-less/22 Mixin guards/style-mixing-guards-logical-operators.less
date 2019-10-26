@@ -1,0 +1,14 @@
+/* You can use the and keyword to work around logical operators with guards.
+ You can combine the guard conditions using the and keyword and negate the
+  conditions using the not keyword. */
+.mixin (@a) when (@a > 50%) and (@a > 5px) {
+	font-size: 14px;
+}
+.mixin (@a) when not (@a < 50%) and not (@a < 5px) {
+	font-size: 20px;
+}
+.mixin (@a) {
+	color: @a;
+}
+.class1 { .mixin(#FF0000) }
+.class2 { .mixin(#555) }

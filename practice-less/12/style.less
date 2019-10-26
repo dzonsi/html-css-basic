@@ -1,0 +1,18 @@
+// EXTEND
+h2 {
+	&:extend(.style);
+	font-style: italic;
+}
+.style {
+	background: mediumseagreen;
+}
+//EXTEND SYNTAX
+.style2:extend(.container, .img) {
+	background: #BF7045;
+}
+.container {
+	font-style: italic;
+}
+.img {
+	font-size: 30px;
+}

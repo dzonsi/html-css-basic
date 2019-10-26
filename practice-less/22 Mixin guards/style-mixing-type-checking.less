@@ -1,0 +1,28 @@
+/* You can use type checking built-in functions to determine the value types
+ for matching mixins */
+.mixin (@a; @b: red) when (iscolor(@b)) {
+	color: blue;
+}
+.mixin (@a) {
+	font-size: @a;
+}
+.myclass { .mixin(20px) }
+// another mixing
+
+.myclass2 { .mixin(25px) }
+
+// new mixing
+
+.mixin2 (@a) when (ispercentage(@a)) {
+	width: @a;
+}
+
+.first { .mixin2(50%) }
+
+.mixin3 (@p) when (ispixel(@p)) {
+	font-size: 50px;
+}
+
+.second {
+	.mixin3(20px)
+}

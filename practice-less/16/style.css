@@ -1,0 +1,38 @@
+.cont-main,
+.style,
+.cont,
+.cont {
+  font-family: "Comic Sans MS";
+  font-size: 30px;
+}
+.cont-main,
+.cont {
+  font-size: 30px;
+}
+/* Classic use case is used to keep away adding the base class in LESS.
+ The values written in base class are avoided when the same values are
+  overridden inside the other class. */
+.style2,
+.cont2 {
+  font-family: "Times New Roman";
+  font-style: italic;
+}
+.cont2 {
+  font-family: "Comic Sans MS";
+}
+/* Extend is used to move the selector as far as the properties you want
+ to use, which helps in reducing the css generated code. */
+.style3,
+.cont3,
+.nav3 {
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+/* Using Extend, we can combine the same styles of a particular
+ selector into other selector. */
+ul.nav4 > li,
+.cont4 {
+  background-color: #6DE6E6;
+  color: black;
+}

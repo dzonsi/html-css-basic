@@ -1,0 +1,16 @@
+/* LESS contains five guard comparison operators: <, >, <=, >= and =.
+ You can use the comparison operator (=) to compare numbers, strings,
+  identifiers, etc, and the remaining operators can be used only with numbers. */
+
+.mixin (@a) when (@a >= 20px) {
+	color: red;
+}
+.mixin (@a) when (@a < 20px) {
+	color: blue;
+}
+.mixin (@a) {
+	font-size: @a;
+}
+.myclass {
+	.mixin(20px);
+}

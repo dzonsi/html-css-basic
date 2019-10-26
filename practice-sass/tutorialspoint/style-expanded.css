@@ -1,0 +1,544 @@
+/* Nested rules */
+.container h1 {
+  font-size: 25px;
+  color: #E45456;
+}
+.container p {
+  font-size: 25px;
+  color: #3C7949;
+}
+.container .box h1 {
+  font-size: 25px;
+  color: #E45456;
+}
+.container .box p {
+  font-size: 25px;
+  color: #3C7949;
+}
+
+/* Referencing Parent Selectors */
+a {
+  font-size: 20px;
+}
+a:hover {
+  background-color: yellow;
+}
+
+.test1 .test2:hover {
+  border: 2px solid grey;
+}
+
+/* Nested Properties */
+.test3 {
+  font-family: Lucida Sans Unicode;
+  font-size: 20px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.test4 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 40px;
+}
+
+.test5 {
+  border-color: green;
+  border-width: 10px;
+  border-radius: 5px;
+  border-style: dotted;
+}
+
+/* Placeholder Selectors */
+.test6, .test9 a, .test7 {
+  color: green;
+}
+
+.test7 {
+  padding: 10px;
+}
+
+.test9 {
+  color: dodgerblue;
+  background-color: #f1f1f1;
+}
+
+.test9 {
+  font-size: 25px;
+}
+/* Comments */
+/* Multiline comments are preserved in CSS output */
+/* Interpolation in Multiline Comments */
+/* Display var value in comment: test */
+/* Interactive Shell */
+/* Variables */
+.test10 {
+  color: #f1f1f1;
+  padding: 10px;
+  margin: 5px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.test11 {
+  background-image: url("images/black-brick.jpg");
+}
+
+/* Data Types */
+/* Strings */
+p.test12 {
+  color: blue;
+}
+p.test12 a.test12 {
+  padding: 10px;
+}
+
+/* Operations */
+/* Number operations */
+.test13 a {
+  font-size: 30px;
+}
+.test13 p {
+  font-size: 5px;
+}
+.test13 h1 {
+  font-size: 50px;
+}
+.test13 h2 {
+  font-size: 15px;
+}
+
+/* Color Operations */
+/*.test14 {
+	color: $color1 + $color2;
+} njima radi meni nece */
+/* String Operations */
+.test15 {
+  font-size: 14px;
+  float: left;
+  display: block;
+}
+
+/* Boolean Operations */
+.test16 {
+  color: green;
+}
+
+.test17 {
+  color: red;
+}
+
+.test18 {
+  color: navy;
+}
+
+/* Parantheses */
+.test19 {
+  font-size: 22px;
+  line-height: 34px;
+}
+
+/* Functions */
+.test20 {
+  color: #d185e0;
+  background-color: #b3e6b3;
+}
+
+/* Interpolation */
+.test21:after {
+  content: "I have 10 books on SASS!";
+}
+
+.test22:after {
+  content: "I have hello books on SASS!";
+}
+
+.test23:after {
+  content: "I have hello books on SASS!";
+}
+
+/* & in Sass Script */
+.test24:hover {
+  color: green;
+}
+
+/* Variable Defaults !proveriti!*/
+.test25:before {
+  content: "Sass";
+}
+
+.test26:before {
+  content: "Sass";
+}
+
+/* Import Directives */
+.test27 .container {
+  background: #ffff;
+  padding: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 1;
+}
+
+li {
+  color: #680000;
+}
+
+/* @media directives */
+.test28 {
+  width: 900px;
+}
+@media screen and (orientation: portrait) {
+  .test28 {
+    width: 500px;
+    margin-left: 120px;
+  }
+}
+
+/* Extend Directives */
+/* Multiple extends */
+.test29, .test31 {
+  color: red;
+}
+
+.test30, .test31 {
+  margin: 20px;
+}
+
+/* Chaining extends */
+.test32, .test33, .test34 {
+  color: red;
+}
+
+.test33, .test34 {
+  padding: 10px;
+}
+
+/* Selector sequences */
+.test35, h3 .test36 {
+  font-size: 24px;
+}
+
+/* Merging selector sequences */
+.test37 .test38 h4, .test37 .test38 #test .test39, #test .test37 .test38 .test39 {
+  color: red;
+}
+
+/* @extend only selectors */
+.test40 .test41 {
+  font-size: 20px;
+}
+
+/* The !optional flag */
+.test42 {
+  color: grey;
+}
+
+/* @extend in directives */
+@media print {
+  .test44, .test45 {
+    font-size: 30px;
+  }
+}
+.test45 {
+  color: red;
+}
+
+@media screen and (min-width: 500pc) {
+  .test46 {
+    color: red;
+  }
+  .test46 .test48, .test46 .test47 {
+    padding: 4px;
+  }
+}
+
+/* @at-root */
+@media print {
+  .test49 {
+    height: 10px;
+  }
+}
+.test49 {
+  color: red;
+}
+@media print {
+  .test49 .test50 {
+    color: blue;
+  }
+}
+.test51 {
+  color: grey;
+  background-color: black;
+}
+.test52 {
+  font-size: 20px;
+  font-style: bold;
+}
+
+/* Debug Directives */
+/* Warn Directives */
+/* Error Directives */
+/* Control Directives & Expressions */
+/* if() */
+.test53 {
+  color: green;
+  background-color: red;
+}
+
+.test54 {
+  padding: 8px;
+  margin: 5px;
+}
+
+.test55 {
+  color: tomato;
+  background-color: tomato;
+}
+
+/* @if & @else & @else if */
+.test56 {
+  border: 1px solid lightgrey;
+  display: block;
+  margin: 10px;
+}
+
+.test57 {
+  padding: 15px;
+}
+
+.test58 {
+  padding: 30px;
+}
+
+/* @for Directive */
+/* @for through */
+.test61 {
+  padding-left: 10px;
+}
+
+.test62 {
+  padding-left: 20px;
+}
+
+.test63 {
+  padding-left: 30px;
+}
+
+.test64 {
+  padding-left: 40px;
+}
+
+.test65 {
+  padding-left: 25px;
+}
+
+.test66 {
+  padding-left: 30px;
+}
+
+.test67 {
+  padding-left: 35px;
+}
+
+.test68 {
+  padding-left: 40px;
+}
+
+/* @for to (ne ukljucuje drugi broj)*/
+.test71 {
+  margin: 5px;
+}
+
+.test72 {
+  margin: 10px;
+}
+
+.test73 {
+  margin: 15px;
+}
+
+.test74 {
+  margin: 20px;
+}
+
+.test76 {
+  margin-top: 7.5px;
+}
+
+.test77 {
+  margin-top: 8.75px;
+}
+
+.test78 {
+  margin-top: 10px;
+}
+
+/* @each Directive */
+/* @each */
+.test79-button-red {
+  color: white;
+  background-color: red;
+}
+
+.test79-button-green {
+  color: white;
+  background-color: green;
+}
+
+.test79-button-blue {
+  color: white;
+  background-color: blue;
+}
+
+.test79-button-yellow {
+  color: white;
+  background-color: yellow;
+}
+
+/* @each multiple assignment */
+.test80-red {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.test80-blue {
+  background-color: blue;
+  border: 5px dotted blue;
+}
+
+.test80-grey {
+  background-color: grey;
+  border: 10px dashed grey;
+}
+
+.test81-black {
+  color: white;
+  background-color: black;
+}
+
+.test81-tomato {
+  color: linen;
+  background-color: tomato;
+}
+
+.test81-navy {
+  color: grey;
+  background-color: navy;
+}
+
+/* @each multiple assignment with maps */
+.test82-h1 {
+  color: red;
+}
+
+.test82-h2 {
+  color: green;
+}
+
+.test82-h3 {
+  color: blue;
+}
+
+/* @while directive */
+.test83-50 {
+  padding-left: 50px;
+}
+
+.test83-40 {
+  padding-left: 40px;
+}
+
+.test83-30 {
+  padding-left: 30px;
+}
+
+.test83-20 {
+  padding-left: 20px;
+}
+
+.test83-10 {
+  padding-left: 10px;
+}
+
+/* Mixin Directives */
+/* Defane a Mixin */
+/* Include a Mixin */
+.cont {
+  color: red;
+}
+
+.test84 .cont {
+  color: red;
+}
+
+.test85 {
+  font-size: 20px;
+}
+.test85 .cont {
+  color: red;
+}
+
+.test86 {
+  color: white;
+  background-color: black;
+}
+
+.test87 {
+  padding-left: 20px;
+  color: white;
+  background-color: black;
+}
+
+/* Arguments */
+.test88 {
+  background-color: #77C1EF;
+  border: 5px solid black;
+  width: 450px;
+}
+
+.test89 {
+  background-color: #77C1EF;
+  border: 2px solid black;
+  width: 450px;
+}
+
+/* Passing Content Block to a Mixin */
+.block {
+  color: green;
+}
+
+.test90 {
+  padding-left: 10px;
+}
+
+/* Functions Directives */
+.test91 {
+  padding-left: 50px;
+  margin-left: 80px;
+}
+
+.test92 {
+  height: 300px;
+}
+
+.test93 {
+  background-color: blue;
+}
+
+.test94 {
+  background-color: dodgerblue;
+}
+
+/* SASS Output Style */
+/* :nested (default)
+   :expanded
+   :compact
+   :compressed
+   sass --watch style.scss:style.css --style compressed
+    */
+
+/*# sourceMappingURL=style-expanded.css.map */

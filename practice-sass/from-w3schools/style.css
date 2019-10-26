@@ -1,0 +1,93 @@
+h2 {
+  color: red;
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h1 {
+  text-decoration: none;
+}
+
+.danger {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+  background-color: green;
+  font-size: "Helvetica", sans-serif;
+}
+
+.first {
+  border: 3px solid red;
+}
+
+.second {
+  -webkit-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+
+.button-basic, .secondary-button, .primary-button {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primary-button {
+  color: black;
+  background-color: linen;
+}
+
+.secondary-button {
+  color: white;
+  font-size: 12px;
+  background-color: black;
+}
+
+.test1 {
+  text-align: center;
+  font-size: 16px;
+  width: 25px;
+}
+
+.test2 {
+  line-height: 18px;
+}
+
+.test3 {
+  color: #8f8f8f;
+}
+
+.test4 {
+  background-color: #cccccc;
+}
+
+.test5 {
+  color: #990000;
+}
+
+.test6 {
+  background-color: white;
+  color: dodgerblue;
+}
+
+.test7 {
+  background-color: black;
+  color: #CEC883;
+}
+
+.test8, .test9 {
+  text-align: left;
+}
+.test8 .test8, .test8 .test9, .test9 .test8, .test9 .test9 {
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

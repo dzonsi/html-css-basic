@@ -1,0 +1,12 @@
+/* LENGTH function will take a comma or space separated list of values as parameter
+ and returns an integer representing the number of elements in a list. */
+p {
+  font-size: 12;
+}
+/* EXTRACT function will return the value at a specified position in a list.
+ It takes list (list of values separated by a comma or space) and index
+  (integer specifying a position of an element to return) as parameters. */
+div {
+  font-size: 20px;
+  color: navy;
+}

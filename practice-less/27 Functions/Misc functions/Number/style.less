@@ -1,0 +1,10 @@
+/* A number is converted from one unit to another. It consists two arguments;
+ first argument passes number along with unit and second argument contain units.
+  The number is converted when the unit is compatible.
+   If the first argument is unchanged then the unit is not compatible. */
+
+body {
+	meter: convert(10cm, mm);
+	time: convert(3s, "ms");
+	no-unit: convert(5, mm);
+}

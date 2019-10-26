@@ -1,0 +1,8 @@
+/* Less supports a number of measurements including absolute units such as inches,
+ centimeters, points, and so on. It can change the unit of dimension. */
+.style {
+  font-size: 20px;
+}
+.first {
+  font-size: 30mm;
+}

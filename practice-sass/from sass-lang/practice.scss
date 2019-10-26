@@ -1,0 +1,113 @@
+/* Variables */
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+body {
+	font: 100% $font-stack;
+	color: $primary-color;
+}
+.test1 {
+	color: $primary-color;
+}
+/* Nesting */
+.test2 {
+	ul {
+		margin: 0;
+		padding: 10px;
+		list-style: none;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		display: block;
+		padding: 12px;
+		text-decoration: none;
+	}
+}
+/* Import */
+@import "reset";
+/* Mixins */
+@mixin transform($property) {
+	-webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.test3 {
+	@include transform(rotate(30deg));
+}
+
+@mixin colors($color1, $color2) {
+	color: $color1;
+	background-color: $color2;
+}
+.test4 {
+	@include colors(red, green);
+}
+
+@mixin class($display, $padding, $margin, $color1, $color2) {
+	display: $display;
+	padding: $padding;
+	margin: $margin;
+	color: $color1;
+	background-color: $color2;
+}
+
+.test5 {
+	@include class(inline-block, 10px, 5px, dodgerblue, linen);
+}
+/* Extend */
+%message-shared {
+	border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+.message {
+	@extend %message-shared;
+}
+.test7 {
+	@extend .test4;
+}
+.success {
+	@extend %message-shared;
+	border-color: navy;
+}
+.error {
+	@extend %message-shared;
+	border-color: mediumseagreen;
+}
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}
+.test8 {
+	@extend %equal-heights;
+}
+/* Operators */
+.container {
+	width: 100%;
+}
+article[role="main"] {
+	float: left;
+	width: 600px / 960px * 100%;
+}
+aside[role="complementary"] {
+	float: right;
+	width: 300px / 960px * 100%;
+}
+$size: 10px;
+$size2: 10%;
+.test9 {
+	margin-left: $size * 2;
+	padding: $size + 20px;
+	width: 100% - $size2;
+}
+.test10 {
+	&:hover {
+		color: red;
+	}
+}
